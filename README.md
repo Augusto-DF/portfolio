@@ -1,2 +1,2 @@
-# portifolio2024
-My current portifolio
+# Portfolio
+My current portfolio
