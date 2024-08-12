@@ -27,7 +27,8 @@
       "@assets/*": ["./src/libs/assets/*"],
       "@components/*": ["./src/components/*"],
       "@styles/*": ["./src/libs/styles/*"],
-      "@hooks/*": ["./src/libs/hooks/*"]
+      "@hooks/*": ["./src/libs/hooks/*"],
+      "@views/*": ["./src/views/*"]
     },
     "noImplicitReturns": true,
     "noImplicitAny": true,

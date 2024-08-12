@@ -1,8 +1,12 @@
-import styles from './styles.module.scss'
 import '@styles/settings.scss'
+import Routerfile from './Routerfile'
 
 const App = () => {
-  return <div className="App"></div>
+  return (
+    <div className="App">
+      <Routerfile />
+    </div>
+  )
 }
 
 export default App
