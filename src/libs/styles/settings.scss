@@ -1,5 +1,6 @@
 @import 'reset.scss';
 @import 'config.scss';
+@import 'typography.scss';
 
 /*
 * BASIC SETUP
@@ -12,7 +13,7 @@ html,
 body {
   font-size: 62.5%; /* 62.5% of 16px = 10px */
   text-rendering: optimizelegibility;
-  font-family: /* $font-family-base, */ Roboto, sans-serif;
+  font-family: $font-family-base, Roboto, sans-serif;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
