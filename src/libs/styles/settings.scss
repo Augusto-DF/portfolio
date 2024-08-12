@@ -1,0 +1,19 @@
+@import 'reset.scss';
+@import 'config.scss';
+
+/*
+* BASIC SETUP
+*/
+:global(#root) {
+  min-height: inherit;
+}
+
+html,
+body {
+  font-size: 62.5%; /* 62.5% of 16px = 10px */
+  text-rendering: optimizelegibility;
+  font-family: /* $font-family-base, */ Roboto, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

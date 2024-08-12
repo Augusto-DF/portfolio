@@ -1,0 +1,105 @@
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes fade-in-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-opacity {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateX(8rem);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(16rem);
+  }
+}
+
+@mixin fade-in {
+  opacity: 1;
+  animation: 500ms ease-in 1;
+}
+
+@mixin fade-out {
+  animation: 500ms forwards;
+}
+
+@mixin fade-in-up {
+  @include fade-in;
+
+  animation-name: fade-in-up;
+}
+
+@mixin fade-in-up-opacity {
+  animation: 0.2s ease-in 1;
+  animation-name: fade-in-opacity;
+}
+
+@mixin fade-in-opacity {
+  @include fade-in;
+
+  animation-name: fade-in-opacity;
+}
+
+@mixin fade-out-opacity {
+  @include fade-out;
+
+  animation-name: fade-out-opacity;
+}
+
+@mixin fade-out-left {
+  @include fade-out;
+
+  animation-name: fade-out-left;
+}
