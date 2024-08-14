@@ -36,6 +36,13 @@
         border-color: $white;
         box-shadow: 3px 3px 0px 0px $white;
     }
+
+    svg {
+        path {
+            fill: $white;
+        }        
+        fill: $white;
+    }
 }
 
 .light {
