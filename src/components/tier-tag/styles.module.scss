@@ -1,0 +1,40 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+
+.tagContainer {
+    padding: 0.8rem 1.6rem;
+    border-radius: 20rem;
+    box-shadow: 
+        0.12rem 0.15rem 0 $fenrir-brand-cotton,
+        0.25rem 0.3rem 0 rgba(28, 28, 32, 1);
+}
+
+.tag {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-xxs;
+    text-transform: capitalize;
+}
+
+// tiers
+
+.rare {
+    border: 0.1rem solid $black;
+    background-color: $fenrir-brand-cotton;
+    color: $font-high;
+}
+
+.legend {
+    background-color: $fenrir-brand-sky;
+    color: $font-high;
+}
+
+.mythic {
+    background-color: $fenrir-brand-mystic;
+    color: $font-inverse-high;
+}
+
+.ultimate {
+    background-color: $fenrir-brand-nut;
+    color: $font-high;
+}
