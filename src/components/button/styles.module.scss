@@ -1,0 +1,58 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+
+.buttonWrapper {
+    padding: 0.8rem 3.2rem;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    border: 0.15rem solid transparent;
+    font-family: $font-family-secondary;
+    letter-spacing: 1.25px;
+}
+
+.iconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.solo {
+    padding: 0.8rem;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.dark {    
+    background-color: $surface-dark;
+    color: $font-inverse-high;
+    
+    &:hover {
+        background-color: var(--hover-color, $surface-dark);
+        border-color: $white;
+        box-shadow: 3px 3px 0px 0px $white;
+    }
+
+    svg {
+        path {
+            fill: $white;
+        }        
+        fill: $white;
+    }
+}
+
+.light {
+    background-color: $white;
+    color: $font-high;
+
+    &:hover {
+        background-color: var(--hover-color, $white);
+        border-color: $fenrir-brand-dark;
+        box-shadow: 3px 3px 0px 0px $white;
+    }
+}
+
