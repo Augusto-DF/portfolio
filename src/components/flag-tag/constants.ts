@@ -11,6 +11,8 @@ const flagTagsData = {
         label: "USA",
         Icon: EuaIcon 
     },
-}
+} 
+
+//const flagsKeys = Object.keys(flagTagsData) // TODO: Make it works to no need add string on flagsKeys and FlagTagsData
 
 export {flagsKeys, flagTagsData}
