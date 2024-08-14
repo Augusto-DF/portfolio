@@ -1,0 +1,13 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+
+.flagTagContainer {
+    max-width: 8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    color: $font-high;
+    font-family: $font-family-secondary;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+}
