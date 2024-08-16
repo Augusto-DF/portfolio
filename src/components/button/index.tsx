@@ -8,7 +8,6 @@ type CommonProps = {
   className?: string
   type?: 'button' | 'submit'
   hoverColor?: string
-  value: string | number
 }
 
 type PrimaryButton = CommonProps & {
@@ -32,15 +31,14 @@ const Button = ({
   styleTheme = 'light',
   hoverColor,
   className,
-  type,
-  value,
+  type = 'button',
   ...props
 }: ButtonType) => {
   const { theme = 'primary', label } = props
   const style = { '--hover-color': hoverColor } as React.CSSProperties
 
   const handleClick = () => {
-    onClick(value)
+    if (onClick) onClick()
   }
 
   if (theme === 'icon' && 'Icon' in props) {
