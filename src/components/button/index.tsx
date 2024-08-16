@@ -42,7 +42,7 @@ const Button = ({
   }
 
   if (theme === 'icon' && 'Icon' in props) {
-    const { iconPosition = 'left', Icon } = props
+    const { iconPosition = label ? 'left' : 'solo', Icon } = props
 
     return (
       <button
