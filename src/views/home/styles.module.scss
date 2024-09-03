@@ -1,0 +1,49 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+@import '@styles/media-queries.scss';
+
+section {
+    padding: 4.8rem;
+}
+
+.hero {
+    width: 100%;
+    padding-top: 8.8rem;
+    padding-bottom: 8.8rem;
+    background-color: $bg-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20.4rem;
+
+    .presentationContainer {
+        width: 37rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        h1, h3 {
+            font-weight: $font-weight-medium;
+            letter-spacing: 0.1rem;
+            color: $font-inverse-medium; 
+            font-family: $font-family-secondary;
+            font-size: $font-size-xs;
+        }  
+
+        h2 {
+            font-size: 3.2rem;
+            color: $white;
+        }
+
+        button {
+            width: min-content;
+            margin-top: 3.4rem;
+        }
+    }
+}
+
+@include sm-viewport {
+    .hero {
+        flex-direction: column;
+    }    
+}
