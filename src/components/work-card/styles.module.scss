@@ -1,0 +1,78 @@
+@import '@styles/colors.scss';
+@import '@styles/typography.scss';
+@import '@styles/line-clamp.scss';
+
+.card {
+     border: 0.2rem solid $stroke-black;
+     border-radius: 1.6rem;
+     overflow: hidden;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     transition: .2s;
+
+     &:hover {
+        box-shadow: 3px 3px 0px 0px $black;
+        transform: translate(-0.3rem, -0.3rem);
+    }
+}
+
+.inverse {
+    .imageWrapper {
+        grid-area: 1 / 2;
+    }
+
+    .contentWrapper {
+        grid-area: 1 / 1;
+    }
+}
+
+.imageWrapper {
+    background-color: $default-card-bg;
+}
+
+.contentWrapper {
+    padding: 4.8rem;
+    color: $font-high;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    background-color: $white;
+
+    h3 {
+        font-family: $font-family-secondary;
+    }
+
+    .flagWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+            font-size: $font-size-xs;
+            font-weight: $font-weight-medium;
+        }
+    }
+
+    .workWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        h2 {
+            font-size: $font-size-xl;
+            font-weight: $font-weight-bold;
+        }
+
+        h3 {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-regular;
+             @include line-clamp(2)
+        }
+    }
+
+    .tagsWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+}
