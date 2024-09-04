@@ -3,9 +3,9 @@ import Routerfile from './Routerfile'
 
 const App = () => {
   return (
-    <div className="App">
+    <main className="App">
       <Routerfile />
-    </div>
+    </main>
   )
 }
 
