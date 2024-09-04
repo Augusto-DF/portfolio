@@ -2,14 +2,25 @@
 @import '@styles/colors.scss';
 @import '@styles/media-queries.scss';
 
+/* I know that exists a padding notation with 1 line to refer to top and bottom padding but I want to centralize the horizontal padding o the section declaration to if I want to change this at some moment I do this in one place */
+@mixin padding_top_bottom ($top, $bottom: null) {
+    @if $bottom == null {
+        padding-top: $top;
+        padding-bottom: $top;
+    } @else {
+        padding-top: $top;
+        padding-bottom: $bottom;
+    }
+   
+}
+
 section {
     padding: 4.8rem;
 }
 
 .hero {
     width: 100%;
-    padding-top: 8.8rem;
-    padding-bottom: 8.8rem;
+    @include padding_top_bottom(8.8rem);
     background-color: $bg-dark;
     display: flex;
     justify-content: center;
@@ -42,8 +53,30 @@ section {
     }
 }
 
+.works {
+    @include padding_top_bottom(10.4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6.4rem;
+
+    & > h2:first-of-type {
+        font-size: $font-size-xxxl;
+        color: $font-high;
+    }
+
+    .worksContainer {
+        max-width: 103.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 6.9rem;
+    }
+}
+
 @include sm-viewport {
     .hero {
         flex-direction: column;
     }    
 }
+
+
