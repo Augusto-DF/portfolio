@@ -1,6 +1,7 @@
 import Footer from '@components/footer'
 import Header from '@components/header'
 import Home from '@views/home'
+import Projects from '@views/projects'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 const Routerfile = () => {
@@ -9,6 +10,7 @@ const Routerfile = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer />
