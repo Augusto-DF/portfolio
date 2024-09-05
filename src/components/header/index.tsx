@@ -8,6 +8,7 @@ import { ReactComponent as GithubIcon } from '@assets/icons/github-icon.svg'
 import { ReactComponent as LinkedinIcon } from '@assets/icons/linkedin-icon.svg'
 import { HEADER_DATA } from './constants'
 import classnames from 'classnames'
+import { HOVER_COLORS } from 'src/libs/utils/hoverColors'
 
 const Header = () => {
   // TODO: Add logic to know which tab should be selected using the path variable.
@@ -42,7 +43,7 @@ const Header = () => {
         <Link to="">
           <li>
             <Button
-              hoverColor="#F0A471"
+              hoverColor={HOVER_COLORS.ferir_nut}
               theme="icon"
               Icon={GithubIcon}
               onClick={() => {
@@ -55,7 +56,7 @@ const Header = () => {
         <Link to="">
           <li>
             <Button
-              hoverColor="#F0A471"
+              hoverColor={HOVER_COLORS.ferir_nut}
               theme="icon"
               Icon={LinkedinIcon}
               onClick={() => {

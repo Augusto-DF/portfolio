@@ -10,12 +10,12 @@ type CommonProps = {
   hoverColor?: string
 }
 
-type PrimaryButton = CommonProps & {
+export type PrimaryButton = CommonProps & {
   theme?: 'primary'
   label: string
 }
 
-type IconButton = CommonProps & {
+export type IconButton = CommonProps & {
   theme: 'icon'
   label?: string
   Icon: FC

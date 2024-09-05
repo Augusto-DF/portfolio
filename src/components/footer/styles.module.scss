@@ -1,0 +1,48 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+@import '@styles/media-queries.scss';
+
+footer {
+    width: 100%;
+    background-color: $bg-dark;
+    padding: 10.4rem 20rem;
+    display: flex;
+    justify-content: center;
+
+    .footerContainer {
+        width: 100%;
+        max-width: 104rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    h2 {
+        color: $font-inverse-high;
+        font-size: $font-size-xxxl;
+        font-weight: $font-weight-bold;
+    }
+
+    span, h3 {
+        font-family: $font-family-secondary;
+    }
+
+    span {
+        font-size: $font-size-sm;
+        color: $font-inverse-medium;
+        font-weight: $font-weight-medium;
+    }
+
+    h3 {
+        margin-top: 0.8rem;
+        font-size: $font-size-lg;
+        color: $font-inverse-high;
+        font-weight: $font-weight-bold;
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1.6rem;
+    }
+}
