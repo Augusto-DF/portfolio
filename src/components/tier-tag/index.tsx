@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import styles from './styles.module.scss'
 
-type TierTagProps = {
+export type TierTagProps = {
   label: string
   tier?: 'ultimate' | 'mythic' | 'legend' | 'rare'
   className?: string
