@@ -3,15 +3,15 @@ import { ProjectCardProps } from "@components/project-card"
 export {}
 
 export const PROJECT_CARD_LIST = [{
-    title: "Title title",
+    title: "Nature themed wedding",
     country: 'brazil',
-    tags: [{label: 'front-end', tier: 'ultimate'}, {label: 'back-end', tier: 'mythic'}],
+    tags: [{label: 'front-end', tier: 'rare'}, {label: 'back-end', tier: 'legend'}],
     href: '/projects'
 },
 {
-    title: "title",
+    title: "Keeping the veteran community strong",
     country: 'usa',
-    tags: [{label: 'back-end', tier: 'mythic'}],
+    tags: [{label: 'front-end', tier: 'rare'}],
     href: '/projects'
 }
 ] as Array<ProjectCardProps>
