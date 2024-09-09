@@ -1,0 +1,13 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+@import '@styles/media-queries.scss';
+
+.projectSection {
+    padding: 12rem 0;
+    background-color: $bg-blue;
+    
+    .projectWrpper {
+        width: 104rem;
+        margin: 0 auto;
+    }
+}
