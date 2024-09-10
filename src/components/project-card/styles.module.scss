@@ -1,0 +1,36 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+@import '@styles/media-queries.scss';
+
+.cardContainer {
+    max-width: 50.4rem;
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    background-color: $fenrir-brand-cotton;
+    border: 0.1rem solid $stroke-black;
+    border-radius: 1.2rem;
+    transition: .2s;
+
+    &:hover {
+        box-shadow: 3px 3px 0px 0px $black;
+        transform: translate(-0.3rem, -0.3rem);
+    }
+
+    .imageContainer {
+        height: 22rem;
+        background-color: #dee7ff;
+    }
+
+    h2 {
+        font-size: $font-size-md;
+        font-weight: $font-weight-bold;
+    }
+
+    .tagsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+}

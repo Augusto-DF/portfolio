@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 import Button from '@components/button'
@@ -11,9 +11,7 @@ import classnames from 'classnames'
 import { HOVER_COLORS } from 'src/libs/utils/hoverColors'
 
 const Header = () => {
-  // TODO: Add logic to know which tab should be selected using the path variable.
-  const path = window.location.href
-  console.log(path)
+  const { pathname } = useLocation()
 
   const handleRedirect = (target: string) => {
     switch (target) {
@@ -33,9 +31,9 @@ const Header = () => {
       </Link>
       <ul className={styles.tabWrapper}>
         {HEADER_DATA.map(({ label, href }, id) => (
-          <li className={classnames({ [styles.active]: href === '/' })} key={href + id}>
-            <Link to={href}>{label}</Link>
-          </li>
+          <Link to={href} key={href + id}>
+            <li className={classnames({ [styles.active]: href === pathname })}>{label}</li>
+          </Link>
         ))}
       </ul>
 

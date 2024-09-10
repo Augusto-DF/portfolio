@@ -1,0 +1,26 @@
+@import '@styles/typography.scss';
+@import '@styles/colors.scss';
+@import '@styles/media-queries.scss';
+
+.projectSection {
+    padding: 12rem 0;
+    background-color: $bg-blue;
+    
+    .projectWrpper {
+        width: 104rem;
+        margin: 0 auto;
+
+        h1 {
+            font-size: $font-size-xl;
+            font-weight: $font-weight-bold;
+            color: $font-high;
+        }
+
+        .projectsContainer {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.4rem;
+        }
+    }
+}
