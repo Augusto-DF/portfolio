@@ -22,7 +22,7 @@ const ProjectCard = ({ title, country, tags, href }: ProjectCardProps) => {
         <div className={styles.tagsContainer}>
           {tags.map((tag, id) => {
             const { label } = tag
-            return <TierTag key={`${label}-project-tag-${id}`} {...tag} />
+            return id < 5 && <TierTag key={`${label}-project-tag-${id}`} {...tag} />
           })}
         </div>
       </div>
