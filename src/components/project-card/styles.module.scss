@@ -1,9 +1,11 @@
 @import '@styles/typography.scss';
 @import '@styles/colors.scss';
+@import '@styles/line-clamp.scss';
 @import '@styles/media-queries.scss';
 
 .cardContainer {
     max-width: 50.4rem;
+    height: 100%;
     padding: 2.4rem;
     display: flex;
     flex-direction: column;
@@ -20,12 +22,15 @@
 
     .imageContainer {
         height: 22rem;
+        min-height: 22rem;
         background-color: #dee7ff;
     }
 
     h2 {
+        min-height: 4rem;
         font-size: $font-size-md;
         font-weight: $font-weight-bold;
+        @include line-clamp(2)
     }
 
     .tagsContainer {
