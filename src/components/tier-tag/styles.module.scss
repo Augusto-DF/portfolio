@@ -5,6 +5,7 @@
     padding: 0.8rem 1.6rem;
     width: max-content;
     border-radius: 20rem;
+    height: min-content;
     box-shadow: 
         0.12rem 0.15rem 0 $fenrir-brand-cotton,
         0.25rem 0.3rem 0 rgba(28, 28, 32, 1);
@@ -15,6 +16,7 @@
     font-weight: $font-weight-semibold;
     font-size: $font-size-xxs;
     text-transform: capitalize;
+
 }
 
 // tiers
