@@ -1,7 +1,7 @@
 export {}
 
 export const data = {
-    tags: [{label: 'Landing page', tier: "mythic"}, {label: 'React', tier: "legend"}, {label: 'Express', tier: "ultimate"}, {label: 'Typescript', tier: "rare"},],
+    tags: [{label: 'Landing page', tier: "mythic"}, {label: 'React', tier: "legend"}, {label: 'Express', tier: "ultimate"}, {label: 'Typescript', tier: "rare"}],
     country: 'brazil',
     company: 'Freelance',
     year: ['2024'],
@@ -58,5 +58,34 @@ export const data = {
             }
         ],
         image: ''
-    }
+    },
+    otherProjects: [
+        {
+            title: 'Vetted - Keeping the veteran community strong',  country: 'usa',
+            tags: [
+                { label: 'Landing page', tier: "mythic" }, 
+                { label: 'React', tier: "legend" }, 
+                { label: 'Express', tier: "ultimate" }, 
+                { label: 'Typescript', tier: "rare" }],
+            href: ''
+        },  
+         {
+            title: 'Refera - Comming soon...',  country: 'brazil',
+            tags: [
+                { label: '???', tier: "rare" }, 
+                { label: '???', tier: "rare" }, 
+                { label: '???', tier: "rare" }
+            ],
+            href: ''
+        }, 
+        {
+            title: 'Dialogo - Comming soon...',  country: 'brazil',
+            tags: [
+                { label: '???', tier: "rare" }, 
+                { label: '???', tier: "rare" }, 
+                { label: '???', tier: "rare" }
+            ],
+            href: ''
+        },
+    ]
 }

@@ -51,16 +51,14 @@
 .heroImg {
     background-color: $bg-dark;
 }
-   
-
 
 .section {
-    position: relative;
-    background-color: $bg-white;
-    justify-content: center;
     width: 100%;
     padding: 12rem;
     display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: $bg-white;
 
     hr {
         position: absolute;
@@ -117,7 +115,7 @@
         margin-top: 3.2rem;
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
+        gap: 1.2rem; 
     }
 }
 
@@ -129,4 +127,22 @@
             font-family: $font-family-base;
         }        
     }
+}
+
+.otherProjects {
+    gap: 2.4rem;
+    background-color: $bg-blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    & > a {
+        height: 100%;
+    }
+    /* justify-content: flex-start;
+     */
+
+    /* & > a {
+        flex: 1;
+        height: 100%;
+    } */
 }

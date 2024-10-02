@@ -2,8 +2,9 @@ import TierTag, { TierTagProps } from '@components/tier-tag'
 import styles from './styles.module.scss'
 import FlagTag from '@components/flag-tag'
 import classnames from 'classnames'
+import ProjectCard from '@components/project-card'
 
-/* TODO: When there are at least 2 themes, define the type of data */
+/* TODO: When there are at least 2 themes, define the type of data keeping in mind that in the future these data will be receive from BE instead from mocked data*/
 type ThemeAProps = { data: any }
 
 const ThemeA = ({ data }: ThemeAProps) => {
@@ -19,6 +20,7 @@ const ThemeA = ({ data }: ThemeAProps) => {
     challenge,
     acomplishments,
     learning,
+    otherProjects,
   } = data
   const { start, end, description, client, platform } = about
   const { description: roleDescription, list: roleList } = my_role
@@ -136,6 +138,26 @@ const ThemeA = ({ data }: ThemeAProps) => {
       <section className={styles.heroImg}>
         {/* TODO: Uncomment it when an image was added */}
         {/* <img src={data.learning_img} alt={learning_img_alt} /> */}
+      </section>
+      <section className={classnames(styles.section, styles.otherProjects)}>
+        {otherProjects.map((other: any, id: number) => {
+          const {
+            title: otherTitle,
+            country: otherCountry,
+            tags: otherTags,
+            href: otherHref,
+          } = other
+
+          return (
+            <ProjectCard
+              key={`other-${otherTitle}-${id}`}
+              title={otherTitle}
+              href={otherHref}
+              tags={otherTags}
+              country={otherCountry}
+            />
+          )
+        })}
       </section>
     </>
   )
