@@ -130,19 +130,18 @@
 }
 
 .otherProjects {
-    gap: 2.4rem;
-    background-color: $bg-blue;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    background-color: $bg-blue;  
 
-    & > a {
-        height: 100%;
+    .otherContainer {
+        width: 104rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.4rem;
+
+        & > h2 {
+            font-size: $font-size-xl;
+            font-weight: $font-weight-bold;
+            grid-column: span 3;
+        }
     }
-    /* justify-content: flex-start;
-     */
-
-    /* & > a {
-        flex: 1;
-        height: 100%;
-    } */
 }

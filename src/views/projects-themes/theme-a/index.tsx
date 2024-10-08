@@ -140,24 +140,27 @@ const ThemeA = ({ data }: ThemeAProps) => {
         {/* <img src={data.learning_img} alt={learning_img_alt} /> */}
       </section>
       <section className={classnames(styles.section, styles.otherProjects)}>
-        {otherProjects.map((other: any, id: number) => {
-          const {
-            title: otherTitle,
-            country: otherCountry,
-            tags: otherTags,
-            href: otherHref,
-          } = other
+        <div className={styles.otherContainer}>
+          <h2>Other projects</h2>
+          {otherProjects.map((other: any, id: number) => {
+            const {
+              title: otherTitle,
+              country: otherCountry,
+              tags: otherTags,
+              href: otherHref,
+            } = other
 
-          return (
-            <ProjectCard
-              key={`other-${otherTitle}-${id}`}
-              title={otherTitle}
-              href={otherHref}
-              tags={otherTags}
-              country={otherCountry}
-            />
-          )
-        })}
+            return (
+              <ProjectCard
+                key={`other-${otherTitle}-${id}`}
+                title={otherTitle}
+                href={otherHref}
+                tags={otherTags}
+                country={otherCountry}
+              />
+            )
+          })}
+        </div>
       </section>
     </>
   )
