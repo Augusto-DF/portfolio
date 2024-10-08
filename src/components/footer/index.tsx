@@ -19,7 +19,7 @@ const Footer = () => {
   }
 
   return (
-    <footer>
+    <footer id="contact">
       <div className={styles.footerContainer}>
         <h2>Let’s build together</h2>
         <div>
