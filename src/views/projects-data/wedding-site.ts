@@ -1,7 +1,9 @@
+import { PROJECTS } from "./utils"
+
 export {}
 
 export const data = {
-    tags: [{label: 'Landing page', tier: "mythic"}, {label: 'React', tier: "legend"}, {label: 'Express', tier: "ultimate"}, {label: 'Typescript', tier: "rare"}],
+    tags: [...PROJECTS.wedding.tags],
     country: 'brazil',
     company: 'Freelance',
     year: ['2024'],
@@ -61,13 +63,8 @@ export const data = {
     },
     otherProjects: [
         {
-            title: 'Vetted - Keeping the veteran community strong',  country: 'usa',
-            tags: [
-                { label: 'Landing page', tier: "mythic" }, 
-                { label: 'React', tier: "legend" }, 
-                { label: 'Express', tier: "ultimate" }, 
-                { label: 'Typescript', tier: "rare" }],
-            href: ''
+            title: 'Vetted - Keeping the veteran community strong',  
+            ...PROJECTS.vetted
         },  
          {
             title: 'Refera - Comming soon...',  country: 'brazil',

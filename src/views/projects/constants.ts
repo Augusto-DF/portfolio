@@ -1,17 +1,14 @@
 import { ProjectCardProps } from "@components/project-card"
+import { PROJECTS } from "@views/projects-data/utils"
 
 export {}
 
 export const PROJECT_CARD_LIST = [{
     title: "Nature themed wedding",
-    country: 'brazil',
-    tags: [{label: 'front-end', tier: 'rare'}, {label: 'back-end', tier: 'legend'}],
-    href: '/projects'
+    ...PROJECTS.wedding
 },
 {
     title: "Keeping the veteran community strong",
-    country: 'usa',
-    tags: [{label: 'front-end', tier: 'rare'}],
-    href: '/projects'
+    ...PROJECTS.vetted
 }
 ] as Array<ProjectCardProps>
