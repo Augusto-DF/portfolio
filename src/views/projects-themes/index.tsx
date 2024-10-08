@@ -5,7 +5,6 @@ import { useMemo } from 'react'
 
 const Themes = () => {
   const { targetProject: project } = useParams()
-  console.log('targetProject', project)
 
   const data = useMemo(() => {
     switch (project) {

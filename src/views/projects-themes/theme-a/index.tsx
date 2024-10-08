@@ -8,7 +8,6 @@ import ProjectCard from '@components/project-card'
 type ThemeAProps = { data: any }
 
 const ThemeA = ({ data }: ThemeAProps) => {
-  console.log('data', data)
   const {
     tags,
     title,
