@@ -30,9 +30,11 @@ const Header = () => {
         <Logo />
       </Link>
       <ul className={styles.tabWrapper}>
-        {HEADER_DATA.map(({ label, href }, id) => (
+        {HEADER_DATA.map(({ label, href, onClick }, id) => (
           <Link to={href} key={href + id}>
-            <li className={classnames({ [styles.active]: href === pathname })}>{label}</li>
+            <button onClick={onClick}>
+              <li className={classnames({ [styles.active]: href === pathname })}>{label}</li>
+            </button>
           </Link>
         ))}
       </ul>
