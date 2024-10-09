@@ -1,17 +1,19 @@
 import { useParams } from 'react-router-dom'
 import { data as wedding } from '../projects-data/wedding-site'
+import { data as vetted } from '../projects-data/vetted-site'
 import ThemeA from './theme-a'
 import { useMemo } from 'react'
 
 const Themes = () => {
   const { targetProject: project } = useParams()
 
+  /* TODO: While the BE isn't built, make it dynamic */
   const data = useMemo(() => {
     switch (project) {
       case 'wedding':
         return wedding
       case 'vetted':
-        return wedding
+        return vetted
       default:
         return
     }
