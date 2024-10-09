@@ -54,7 +54,7 @@
 
 .section {
     width: 100%;
-    padding: 12rem;
+    padding: 6rem;
     display: flex;
     justify-content: center;
     position: relative;
@@ -98,6 +98,7 @@
 }
 
 .about {
+    padding-top: 6rem;
     h3, h4, h5 {
         font-weight: $font-weight-regular;
         letter-spacing: 0.05rem;
@@ -131,6 +132,7 @@
 
 .otherProjects {
     background-color: $bg-blue;  
+    padding: 12rem;
 
     .otherContainer {
         width: 104rem;
