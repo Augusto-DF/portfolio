@@ -6,8 +6,14 @@ import { ReactComponent as TurtleImage } from '@assets/images/turtle-image.svg'
 import { HOME_WORKS_CARD_LIST } from './constants'
 import styles from './styles.module.scss'
 import WorkCard from '@components/work-card'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+  const navigate = useNavigate()
+
+  const redirectToProjects = () => {
+    navigate('/projects')
+  }
   return (
     <main>
       <section id="hero" className={styles.hero}>
@@ -16,8 +22,7 @@ const Home = () => {
           <h2>a React Front-end developer</h2>
           <h3>passionate about crafting high-quality, clean code software.</h3>
 
-          {/* TODO: Create and add onClick action */}
-          <Button label="Projects" onClick={() => {}} styleTheme="light" />
+          <Button label="Projects" onClick={redirectToProjects} styleTheme="light" />
         </div>
 
         <img src={HeroImgSrc} alt="Pixel character walking and an action options menu" />
