@@ -41,6 +41,6 @@ jobs:
             echo ${{ env.environment }}
             echo ${{ env.deploy_path }}
             echo Fim.
-            # npm install                            # Install dependencies (if needed)
-            # npm run build                          # Build the project (if needed)
-            # sudo systemctl restart nginx           # Restart Nginx to apply changes
+            yarn                            # Install dependencies (if needed)
+            yarn build                          # Build the project (if needed)
+            sudo systemctl restart nginx           # Restart Nginx to apply changes
