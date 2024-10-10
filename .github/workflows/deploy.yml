@@ -17,6 +17,7 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
+          eval "$(ssh-agent -s)"
           echo "ssh88635517" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
