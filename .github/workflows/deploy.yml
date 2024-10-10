@@ -14,6 +14,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "ssh88635517" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+      - name: Check SSH Agent and Add Key
+        run: |
+          eval "$(ssh-agent -s)"                  # Start the SSH agent
+          ssh-add ~/.ssh/id_rsa                    # Add the SSH key
+          ssh-add -l                                # List added keys for confirmation
+          ssh -T git@github.com                      # Test SSH connection
+
       - name: Set environment based on branch
         id: env
         run: |
@@ -40,10 +54,7 @@ jobs:
             set -e  # Exit immediately if a command exits with a non-zero status
             cd ${{ env.deploy_path }}
             echo "Pulling latest changes..."
-            eval "$(ssh-agent -s)"
-            echo "ssh88635517" > ssh-add ~/.ssh/id_rsa
             git remote -v
-            ssh-add -l
             git pull ${{ env.repo_url }} ${{ env.environment }}  # Use the SSH URL
 
             # Debugging outputs
