@@ -37,6 +37,8 @@ jobs:
           port: 22
           script: |
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
+            git config --global user.email "neoaugustocode@gmail.com"  # Make sure your Git config is set
+            git config --global user.name "Augusto-DF"
             git pull origin ${{ env.environment }}  # Pull latest changes from corresponding branch
             echo ${{ env.environment }}
             echo ${{ env.deploy_path }}
