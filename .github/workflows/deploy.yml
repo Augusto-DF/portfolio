@@ -24,7 +24,7 @@ jobs:
           elif [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
             # Staging branch
             echo "environment=staging" >> $GITHUB_ENV
-            echo "deploy_path=/home/projects/augustocode/staging/portfolio" >> $GITHUB_ENV
+            echo "deploy_path=~/../home/projects/augustocode/staging/portfolio" >> $GITHUB_ENV
           fi
 
       - name: Deploy to VPS via SSH
@@ -37,8 +37,6 @@ jobs:
           port: 22
           script: |
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
-            eval "$(ssh-agent -s)"
-            ssh-add ~/../home/ghSSh/id_rsa
             ${{ secrets.VPS_PASS }}
             git pull origin ${{ env.environment }}  # Pull latest changes from corresponding branch
             echo ${{ env.environment }}
