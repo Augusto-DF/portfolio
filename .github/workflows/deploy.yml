@@ -82,8 +82,8 @@ jobs:
             NEofObKDcdzQGtV6I3S54xYQH3joj//lYJQNrL5djKu1bl3OW5HLdnSgaX6//VT0UrxGun
             RBnz/jdB3sumJWB3zlshlQ6KHAOTCGnt7vGEacp4deNCMF8VUaYPDsMZwsa+V2NXMfFqGZ
             ws46nx/B+B2DBlnejJSTkqGCg=
-            -----END OPENSSH PRIVATE KEY----- # $ {{ secrets.VPS_SSH_KEY }}
-          passphrase: '#88635517Root' #$ {{ secrets.VPS_SSH_PASSPHRASE }}
+            -----END OPENSSH PRIVATE KEY-----
+          passphrase: '#88635517Root' #$ {{ secrets.VPS_SSH_PASSPHRASE }} # $ {{ secrets.VPS_SSH_KEY }} esse segundo no de cima
           port: 22
           script: |
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
