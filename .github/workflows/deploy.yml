@@ -16,8 +16,10 @@ jobs:
 
       - name: Set up SSH
         run: |
+          mkdir -p ~/.ssh
           echo "ssh88635517" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          chmod 644 ~/.ssh/id_rsa.pub
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
       - name: Set environment based on branch
