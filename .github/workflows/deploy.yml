@@ -39,6 +39,7 @@ jobs:
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
             eval "$(ssh-agent -s)"
             ssh-add ~/../home/ghSSh/id_rsa
+            ${{ secrets.VPS_PASS }}
             git pull origin ${{ env.environment }}  # Pull latest changes from corresponding branch
             echo ${{ env.environment }}
             echo ${{ env.deploy_path }}
