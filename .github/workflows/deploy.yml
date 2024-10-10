@@ -48,6 +48,7 @@ jobs:
             cd ${{ env.deploy_path }}
             echo "Pulling latest changes..."
             eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/id_rsa
             git remote -v
             ssh-add -l
             git pull ${{ env.repo_url }} ${{ env.environment }}  # Use the SSH URL
