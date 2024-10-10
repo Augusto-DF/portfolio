@@ -34,14 +34,56 @@ jobs:
           username: 'root' # $ {{ secrets.VPS_USER }}
           key: |
             -----BEGIN OPENSSH PRIVATE KEY-----
-            b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABAn84WzaM
-            T3e2Cnrz/nAjkoAAAAGAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIPHiMzR3sFanRS0G
-            I6XkYJaYzeuLxp4QZjtChKzlLjYtAAAAoBYbdbLjKZ0Tz7E946oD5ed/abYpetRWOuZIdQ
-            GvNJuOb+z6hH5Qk6XT+XWhmYjx4f7VEuvnNxu4V5hilREXIBbjAEey9ShjnOhsaUGrISuK
-            0CuLxScy/zrj5CjBO5nY6jA/bFeDVlaw7qGHmDlmAwy+pYXUKAgR1C664M6rtg/30cZAR6
-            6kJ8FEcBdMlbpHpPqr/8Di6xrPNBFW5heNczI=
+            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
+            ws46nx/B+B2DBlnejJSTkqGCg=
             -----END OPENSSH PRIVATE KEY-----
-          passphrase: '#ssh88635517' #$ {{ secrets.VPS_SSH_PASSPHRASE }} # $ {{ secrets.VPS_SSH_KEY }} esse segundo no de cima
+          passphrase: 'ssh88635517' #$ {{ secrets.VPS_SSH_PASSPHRASE }} # $ {{ secrets.VPS_SSH_KEY }} esse segundo no de cima
           port: 22
           script: |
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
