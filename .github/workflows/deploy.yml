@@ -30,10 +30,10 @@ jobs:
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v0.1.6
         with:
-          host: '195.200.7.134' # $ {{ secrets.VPS_HOST }} # Same VPS for both environments, or use different secrets
-          username: 'root' # $ {{ secrets.VPS_USER }}
+          host: ${{ secrets.VPS_HOST }} # Same VPS for both environments, or use different secrets
+          username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_KEY }}
-          passphrase: 'ssh88635517' #$ {{ secrets.VPS_SSH_PASSPHRASE }} # $ {{ secrets.VPS_SSH_KEY }} esse segundo no de cima
+          passphrase: ${{ secrets.VPS_PASS }}
           port: 22
           script: |
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
