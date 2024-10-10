@@ -43,7 +43,6 @@ jobs:
           passphrase: ${{ secrets.VPS_PASS }}
           port: 22
           script: |
-            echo ssh88635517 
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
             ${{ secrets.VPS_PASS }}
             git pull origin ${{ env.environment }}  # Pull latest changes from corresponding branch
