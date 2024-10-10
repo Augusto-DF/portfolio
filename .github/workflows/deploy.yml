@@ -14,6 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "ssh88635517" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
       - name: Set environment based on branch
         id: env
         run: |
@@ -36,6 +43,7 @@ jobs:
           passphrase: ${{ secrets.VPS_PASS }}
           port: 22
           script: |
+            echo ssh88635517 
             cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
             ls -a
             ${{ secrets.VPS_PASS }}
