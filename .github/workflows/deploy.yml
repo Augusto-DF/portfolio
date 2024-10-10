@@ -17,7 +17,6 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
-          eval "$(ssh-agent -s)"
           echo "ssh88635517" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
@@ -48,6 +47,7 @@ jobs:
             set -e  # Exit immediately if a command exits with a non-zero status
             cd ${{ env.deploy_path }}
             echo "Pulling latest changes..."
+            eval "$(ssh-agent -s)"
             git remote -v
             ssh-add -l
             git pull ${{ env.repo_url }} ${{ env.environment }}  # Use the SSH URL
