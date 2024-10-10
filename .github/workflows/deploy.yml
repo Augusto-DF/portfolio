@@ -37,18 +37,18 @@ jobs:
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v0.1.6
         with:
-          host: ${{ secrets.VPS_HOST }} # Same VPS for both environments, or use different secrets
+          host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_KEY }}
           passphrase: ${{ secrets.VPS_PASS }}
           port: 22
           script: |
-            cd ${{ env.deploy_path }}               # Navigate to correct directory (staging or production)
+            cd ${{ env.deploy_path }}
             ${{ secrets.VPS_PASS }}
-            git pull origin ${{ env.environment }}  # Pull latest changes from corresponding branch
+            git pull origin ${{ env.environment }}  
             echo ${{ env.environment }}
             echo ${{ env.deploy_path }}
             echo Fim.
-            npm install                            # Install dependencies (if needed)
-            yarn build                          # Build the project (if needed)
-            sudo systemctl restart nginx           # Restart Nginx to apply changes
+            npm install                            
+            yarn build                          
+            sudo systemctl restart nginx
