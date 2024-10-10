@@ -48,6 +48,7 @@ jobs:
             cd ${{ env.deploy_path }}
             echo "Pulling latest changes..."
             git remote -v
+            ssh-add -l
             git pull ${{ env.repo_url }} ${{ env.environment }}  # Use the SSH URL
 
             # Debugging outputs
