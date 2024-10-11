@@ -14,59 +14,40 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Set environment based on branch
-        id: env
+      - name: Start ssh-agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Pull latest changes from GitHub
         run: |
-          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
-            # Master branch
-            echo "environment=production" >> $GITHUB_ENV
-            echo "deploy_path=/path/to/production/project" >> $GITHUB_ENV
-          elif [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
-            # Staging branch
-            echo "environment=staging" >> $GITHUB_ENV
-            echo "deploy_path=~/../home/projects/augustocode/staging/portfolio" >> $GITHUB_ENV
-            echo "repo_url=git@github.com:Augusto-DF/portfolio.git" >> $GITHUB_ENV  # Update this line
+          echo "Pulling latest changes..."
+          git remote -v
+          git pull git@github.com:Augusto-DF/portfolio.git staging
+        env:
+          GIT_SSH_COMMAND: ssh -v
+
+      - name: Install npm dependencies
+        run: |
+          if command -v npm &> /dev/null; then
+            echo "Installing npm dependencies..."
+            npm install
+          else
+            echo "npm is not installed. Please install Node.js and npm."
+            exit 1
           fi
 
-      - name: Deploy to VPS via SSH
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_KEY }}
-          passphrase: ${{ secrets.VPS_PASS }}
-          port: 22
-          script: |
-            set -e  # Exit immediately if a command exits with a non-zero status
-            cd ${{ env.deploy_path }}
-            echo "Pulling latest changes..."
-            git remote -v
-            git pull ${{ env.repo_url }} ${{ env.environment }}  # Use the SSH URL
+      - name: Build the project
+        run: |
+          if command -v yarn &> /dev/null; then
+            echo "Building the project with yarn..."
+            yarn build
+          else
+            echo "yarn is not installed. Please install Yarn."
+            exit 1
+          fi
 
-            # Debugging outputs
-            echo "Current environment: ${{ env.environment }}"
-            echo "Deploy path: ${{ env.deploy_path }}"
-            echo "Finished pulling."
-
-            # Check if npm is installed
-            if command -v npm &> /dev/null; then
-              echo "Installing npm dependencies..."
-              npm install
-            else
-              echo "npm is not installed. Please install Node.js and npm."
-              exit 1
-            fi
-
-            # Check if yarn is installed
-            if command -v yarn &> /dev/null; then
-              echo "Building the project with yarn..."
-              yarn build
-            else
-              echo "yarn is not installed. Please install Yarn."
-              exit 1
-            fi
-
-            echo "Restarting Nginx..."
-            sudo systemctl restart nginx
+      - name: Restart Nginx
+        run: sudo systemctl restart nginx
