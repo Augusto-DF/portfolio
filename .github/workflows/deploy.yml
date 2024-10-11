@@ -1,5 +1,7 @@
-name: Deploy to VPS
+# {{ github.ref }} - Your branch name
+# {{ github.repository }} - Your repository name
 
+name: Deploy to VPS
 on:
   push:
     branches:
@@ -8,26 +10,15 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "ssh88635517" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-
-      - name: Check SSH Agent and Add Key
-        run: |
-          eval "$(ssh-agent -s)"                  # Start the SSH agent
-          ssh-add ~/.ssh/id_rsa                    # Add the SSH key
-          ssh-add -l                                # List added keys for confirmation
-          ssh -T git@github.com                      # Test SSH connection
-
+        uses: actions/checkout@v4
+      # Make sure the @v0.9.0 matches the current version of the action
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-privet-key: ${{ secrets.VPS_KEY }}
       - name: Set environment based on branch
         id: env
         run: |
