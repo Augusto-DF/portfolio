@@ -19,6 +19,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.VPS_KEY }}
+
       - name: Set environment based on branch
         id: env
         run: |
