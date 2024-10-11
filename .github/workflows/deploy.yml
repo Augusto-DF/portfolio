@@ -19,7 +19,7 @@ jobs:
       - name: Start ssh-agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.VPS_KEY }}
 
       - name: Pull latest changes from GitHub
         run: |
