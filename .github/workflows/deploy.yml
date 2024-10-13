@@ -31,7 +31,58 @@ jobs:
       - name: VPS Deployment
         uses: easingthemes/ssh-deploy@main
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+          SSH_PRIVATE_KEY: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIJKAIBAAKCAgEAwdEb9wr5/hR0YDVC1jbTxtrckX2hLE8VEl9uyzA4hOqrne6e
+            ZfZGDaOcqky6FW9tS6VY0ZsdwYyPYSQHmRxxYHJMGNauKN43N0qEEc5S1Dq63zs4
+            cSyB80P5yYBE770i2H0XdDpPjMAY37L0P9qEcYYDLwlsPfwx2woE1qoVVkEZFuzN
+            5+sDsDQ3TijBoXnMMabkX0tPufMVUD4JAkIHks/jz4ixuKQ20nsl6C7GLqkPQfVs
+            f9jZsF1Mrcar3Ox3dYlR7sl9RBhLBaTosFYL3eZbRiz9QiPhwO2FSNOzdULI7LU5
+            hzzqrNbDsH9YZbY+SE+eZBbfIh0NMRe7BxqkU5UqFWZe2jMIxJsQOmwpHCkV3Wpu
+            fparpOnrPwSAE6k/leS45dVjNimp1Xlxi2hT8z3S/nrd7xlEs4upY1lO2f633lB/
+            FfD0UNIxc7a1sY+jRe1z198cU7oTOaajg966JwomYPaJ/eF565TMBF7buANlok5b
+            EEAwwyD1rkyasuDrV4mbsj7V3ef9toh8I4pWyef3L2D/8nbKgJXhN9tPbHLk+s8+
+            dg5CLca0CUSv54SSsa9yj3uLBcChCqcFcOtdpT4Q5/X4ETPI9Zgt0ZVoB9wIt61y
+            7eOF+qeZzfAjFRsfsB1a8XnR/IrFPpy7yHEClBO3/JKZyNWBmP9D/9lNRa0CAwEA
+            AQKCAgB+Tx6gcwDUutPU1yEFpZmCYKOaFXtx+t/Kp3L27CgJRz4soJON819YCCZT
+            PcmPqpxZzhoCD8rmlgnizq489DJXHmXFUjMR4y+s0t0bFZEZSmT6kgeIie7ucIBa
+            90L10hbhazRbxJyPJ6mOL3vKGUhzC1kL0GJASxjanL7mftWE7svBCvZti9VNgdoB
+            D8KQz2VpflAaYmRE1MwxDRyl4g45eU4HtBfOMwafSS49EC6LvhV5cM4Sy2mi7ErK
+            fU0HnvuDF8jTi3Adbo+F0CDsukblh/g31Z3++o9nQeO4wG6Vnr5+tOQW5HYzyYqi
+            fXtIXepdCbY5mEY2XyR3t/Vk/dHUnFmacm/Akn8Y9dDlgp+R6sy5D3fK0dj7oh0+
+            1NCYdLFZ3S+I1ycmL37X6nFCtCjakuvJsP9qAFUXlUaFfv4OY0MX0VkEsW0ojL7c
+            H3LybUabErLxPOcoLAl1s5o0ulsMZnkjDExr4haERsMIUnFQ0t35411JyCsQA6/o
+            BX4rIut3+TgiALSDGbdpiXB1j+ZNAH1zkgYEXWtxQEGgrqPdRKHumS6mZAq2T40u
+            O62PBgUqh7eT9xjaJh5fhO652721i2gtprhcSMwpnog9VIlU1WZD9j0BpqhwJT2f
+            KJk3qlNj9qFfiQwnuc6GEvfX2etpVblTj2sQyDTaPo68/qxAQQKCAQEA5BFnek0Y
+            LGL3aQ3AVPRbj5KrbHta9PI2towKqgbchnRretlo6ayo2NaY178+ZepQVwLJj1T2
+            9EUmCDcPBEtDfUKH7cD7m+w+3QUSGU0Y8ubm6g9Y8M11KsCefr3FQP8cqKgFUy9N
+            NpGak+TtcNVBItNbq3RdNQ5bhXKMu38TNyHKqx9NAbnkDiSC5eCVosOouQZ5ercH
+            bWG4obQUJMPwZH0SMZOaN6n/GWmeTBGtzoT0R5X+uY1g6SEO0ANyfQhNKWsahejw
+            OYsLrAVniPp1sbWclVxo153MbC/Itzyg4M33CgPXtn11ua7+8J2BfbTEQsrqb8P0
+            Kt0YnW5OMwhQFQKCAQEA2Y3U5PKJGzVxYxnF9ueGBmHPXfSEHKYPrp0LRVGEHS85
+            huk+85nkoZS5Ty1feWHpalReas2bCV8rDiUlraqqe0OFhOo0sNK8iHWV86206gby
+            AAkvWDrqSe1oC55kHd6tArJXDNabbyJAW1S8V0fQfDFKNnC1ViAKwdycKG3YKtUm
+            LWCNarhJUR/NbxJue3s4cm3TvYpq0X/OP81gCMEL95X7g5YfU1hbZuOlxCwuWWYN
+            Bgc+eCQRxPOe1615l1KE66CCb79R4YIfOmpM13AXmPESv19MZ/LtyZdU/Okvh0Ax
+            7LgtUxoeCAmgUjvrCopwTWRFI8phk2mRD45w5RDtOQKCAQBbg2RLHc46WUe/XqYz
+            MI3g0VB5yhGYQeyUWSMaUICCbwqFk+FWClMCFzHjODjYeinckCDCo6woHesB1t3u
+            siiVhXG3g/0x9pzO4O7/OgFtzhsQBjKBBWAjVIEEiC8zQmqEfk8MrulDoS8ucuiX
+            ouptB/Q7mwifdnBg3rL7tSTHtYZ2HawvqiCJUDs59GD2m54DCEcMZ47SZCjKsdB3
+            ZCv8lncLb5etCEh1MP00ts9QE+dVJim82K7vPLWN4CQ7aW5U1UYiP3LNFC8Nymld
+            /GnnceEvyZHEGuxg6NeYNvqy2dJrsVkIP9VSOZbQg9Lm1vb9eiCR0kYSQP9UhGNa
+            dNZ1AoIBAQC95GLThC/QpBFYowJ8xRHjODS8mdVG/Fvr2gAgfUqH/tSDwcvE7ar2
+            rs4hIkWXubL3sLTJHLYatArsydfdgn5UIVfF8HgVb5xIr/o3PIQRUgahqWK97I7c
+            AHE00wgoWllBZVE+T4RUuNzb21aaCIEeJhfU9QQTLNy24k0brOVmXa55JTHK2RiF
+            yvCR5tCwz5kxqFONuegK/TeV0Tnl6jr73NowvTSSlykQ4durI7VBKyZrAJ+yVil8
+            c/lN4ImlX83NrcisqZ5a7C0929M+qQSv5pyqlhAnG5AayhDQwOlPcOUi7pABXWah
+            NWXO4aYDCVuE8eS3nMsW1KpdncNE7kVhAoIBAHTpPLjt+nvk4/691vNMtPm2RtKi
+            oVa+dXkUB+K09NGyXnke7Xn7TnMHi56T2fAFqzVz0wWl/NxQx8eAbFJ8/654keuW
+            R3FE7EBdWdc8Vb5F1HQKu1fSpkcnurUT+Ah2gI7Xkm8ykyKPh+GpephMyYBXmIU1
+            u2LKuyof8Tk2v2X5oF6Qdu5UHe/J9E3njy0UyF/ZAfZfJ9SVB4w0QGZUMhpeHwTX
+            YY0EMACLYIgax7lhGgNXo/4TLo7uF0GeLZiSgXi3NMtAZnbljIFCxTbUePs9/r8G
+            ozxPWOU6kTLEt6E027CnfXuO9L0IFOybI4HEUnl9/wNxpGnltcspe/0nOw8=
+            -----END RSA PRIVATE KEY-----
           ARGS: '-rlgoDzvc --delete'
           SOURCE: 'build/'
           REMOTE_HOST: '195.200.7.134'
