@@ -24,7 +24,7 @@ jobs:
     needs: [build]
     steps:
       - name: Repo Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Necessary to access the remote repo
 
       - name: Build
         run: |
@@ -34,7 +34,7 @@ jobs:
           ls -a
 
       - name: VPS Deployment
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@main # Necessary to access the host via ssh
         with:
           # PRVATE KEY RSA ON PEM MODE
           SSH_PRIVATE_KEY: |
