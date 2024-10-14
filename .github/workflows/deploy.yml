@@ -17,9 +17,9 @@ jobs:
       - name: Build
         run: |
           ls -a
-          # git pull origin staging
-          # rm -r build/
-          # yarn build
+          git pull origin staging
+          rm -r build/
+          yarn build
 
   deploy-staging:
     runs-on: ubuntu-latest
