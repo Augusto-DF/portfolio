@@ -23,7 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: staging
-      url: https://staging.augustocode.com
     needs: [build]
     steps:
       - name: Repo Checkout
