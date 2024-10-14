@@ -18,8 +18,10 @@ jobs:
         run: |
           ls -a
           git pull origin staging
-          [ -d "build/" ] && rm -r build/
-          yarn build
+          npm i # install depedencies
+          [ -d "build/" ] && rm -r build/ # Remove build if it exists
+          echo "Building...."
+          yarn build # Build
 
   deploy-staging:
     runs-on: ubuntu-latest
