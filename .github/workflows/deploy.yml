@@ -14,9 +14,9 @@ jobs:
     steps:
       - name: Build
         run: |
-          cd ../portfolio
+          cd ../portfolio/
           ls -a
-          # git pull origin staging
+          git pull origin staging
           # rm -r build/
           # yarn build
 
