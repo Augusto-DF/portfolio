@@ -23,6 +23,7 @@ jobs:
           # [ -d "build/" ] && rm -r build/ # Remove build if it exists
           echo "Building...."
           yarn build # Build
+          ls -a
 
   deploy-staging:
     runs-on: ubuntu-latest
