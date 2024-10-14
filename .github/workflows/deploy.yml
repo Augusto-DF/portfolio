@@ -40,6 +40,7 @@ jobs:
             0CuLxScy/zrj5CjBO5nY6jA/bFeDVlaw7qGHmDlmAwy+pYXUKAgR1C664M6rtg/30cZAR6
             6kJ8FEcBdMlbpHpPqr/8Di6xrPNBFW5heNczI=
             -----END OPENSSH PRIVATE KEY-----
+
           ARGS: '-rlgoDzvc -i --delete'
           SOURCE: 'build/'
           REMOTE_HOST: '195.200.7.134'
