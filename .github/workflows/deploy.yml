@@ -31,6 +31,7 @@ jobs:
       - name: VPS Deployment
         uses: easingthemes/ssh-deploy@main
         with:
+          SCRIPT_BEFORE: ls
           SSH_PRIVATE_KEY: |
             -----BEGIN OPENSSH PRIVATE KEY-----
             b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABAn84WzaM
