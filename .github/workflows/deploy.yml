@@ -12,11 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Repo Checkout
+        uses: actions/checkout@v4
       - name: Build
         run: |
-          cd ../../portfolio/
           ls -a
-          git pull origin staging
+          # git pull origin staging
           # rm -r build/
           # yarn build
 
