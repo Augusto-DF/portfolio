@@ -19,6 +19,7 @@ jobs:
           ls -a
           git pull origin staging
           npm i # install depedencies
+          yarn
           # [ -d "build/" ] && rm -r build/ # Remove build if it exists
           echo "Building...."
           yarn build # Build
