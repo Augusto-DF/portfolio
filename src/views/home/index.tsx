@@ -18,7 +18,7 @@ const Home = () => {
     <main>
       <section id="hero" className={styles.hero}>
         <div className={styles.presentationContainer}>
-          <h1>Hi! I’m Augusto Oliveira,</h1>
+          <h1>Hi! I’m Augusto Oliveira, And I'm testing the Automatic deploy using GH Actions</h1>
           <h2>a React Front-end developer</h2>
           <h3>passionate about crafting high-quality, clean code software.</h3>
 
