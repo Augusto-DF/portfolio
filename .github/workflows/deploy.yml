@@ -30,8 +30,16 @@ jobs:
       name: staging
     needs: [build]
     steps:
-      # - name: Repo Checkout
-      #   uses: actions/checkout@v4
+      - name: Repo Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          ls -a
+          npm i # install depedencies
+          echo "Building...."
+          yarn build # Build
+          ls -a
 
       - name: VPS Deployment
         uses: easingthemes/ssh-deploy@main
