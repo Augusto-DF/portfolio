@@ -18,7 +18,7 @@ jobs:
         run: |
           ls -a
           git pull origin staging
-          rm -r build/
+          [ -d "build/" ] && rm -r build/
           yarn build
 
   deploy-staging:
