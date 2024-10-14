@@ -28,9 +28,6 @@ jobs:
       - name: Repo Checkout
         uses: actions/checkout@v4
 
-      - name: Set SSH key permissions
-        run: chmod 600 /home/runner/.ssh/deploy_key_root_1728936986198
-
       - name: VPS Deployment
         uses: easingthemes/ssh-deploy@main
         with:
@@ -95,3 +92,6 @@ jobs:
           SCRIPT_BEFORE: |
             whoami
             ls -al
+
+      - name: Set SSH key permissions
+        run: chmod 600 /home/runner/.ssh/deploy_key_root_1728936986198
