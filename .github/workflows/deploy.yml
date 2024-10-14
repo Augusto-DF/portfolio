@@ -32,7 +32,14 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         with:
           SSH_PRIVATE_KEY: |
-            ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPHiMzR3sFanRS0GI6XkYJaYzeuLxp4QZjtChKzlLjYt neoaugustocode@gmail.com
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABAn84WzaM
+            T3e2Cnrz/nAjkoAAAAGAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIPHiMzR3sFanRS0G
+            I6XkYJaYzeuLxp4QZjtChKzlLjYtAAAAoBYbdbLjKZ0Tz7E946oD5ed/abYpetRWOuZIdQ
+            GvNJuOb+z6hH5Qk6XT+XWhmYjx4f7VEuvnNxu4V5hilREXIBbjAEey9ShjnOhsaUGrISuK
+            0CuLxScy/zrj5CjBO5nY6jA/bFeDVlaw7qGHmDlmAwy+pYXUKAgR1C664M6rtg/30cZAR6
+            6kJ8FEcBdMlbpHpPqr/8Di6xrPNBFW5heNczI=
+            -----END OPENSSH PRIVATE KEY-----
           ARGS: '-rlgoDzvc -i --delete'
           SOURCE: 'build/'
           REMOTE_HOST: '195.200.7.134'
