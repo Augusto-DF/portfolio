@@ -87,7 +87,7 @@ jobs:
           SOURCE: 'build/'
           REMOTE_HOST: '195.200.7.134'
           REMOTE_USER: 'root'
-          REMOTE_PORT: 23
+          REMOTE_PORT: 22
           TARGET: '~/../home/projects/augustocode/staging/portfolio/'
           SCRIPT_BEFORE: |
             whoami
