@@ -19,7 +19,7 @@ jobs:
           ls -a
           git pull origin staging
           npm i # install depedencies
-          [ -d "build/" ] && rm -r build/ # Remove build if it exists
+          # [ -d "build/" ] && rm -r build/ # Remove build if it exists
           echo "Building...."
           yarn build # Build
 
@@ -93,7 +93,7 @@ jobs:
           REMOTE_HOST: '195.200.7.134'
           REMOTE_USER: 'root'
           REMOTE_PORT: 22
-          TARGET: '~/../home/projects/augustocode/staging/'
+          TARGET: '~/../home/projects/augustocode/staging/portfolio/'
           SCRIPT_BEFORE: |
             whoami
             ls -al
