@@ -34,68 +34,16 @@ jobs:
           ls -a
 
       - name: VPS Deployment
-        uses: easingthemes/ssh-deploy@main # Necessary to access the host via ssh
+        uses: easingthemes/ssh-deploy@main # Necessary to access the host via ssh doc:https://github.com/easingthemes/ssh-deploy
         with:
           # PRVATE KEY RSA ON PEM MODE
-          SSH_PRIVATE_KEY: |
-            -----BEGIN RSA PRIVATE KEY-----
-            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
-            -----END RSA PRIVATE KEY-----
-
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: '-rlgoDzvc -i --delete' # I HAVE NO IDEA WHAT THIS MEANS, JUST COPY IT AND PRAY THAT NO ONE ASKS
           SOURCE: '' # Relative path to the project root on remote repo (Github)
-          REMOTE_HOST: '195.200.7.134' # HOST IP OR URL
-          REMOTE_USER: 'root' # HOST USER
+          REMOTE_HOST: ${{ secrets.HOST_SERVER }} # HOST IP OR URL
+          REMOTE_USER: ${{ secrets.HOST_USER }} # HOST USER
           REMOTE_PORT: 22 # HOST PORT
-          TARGET: '~/../home/projects/augustocode/staging/portfolio/' # SERVER PATH TO THE PROJECT FOLDER
+          TARGET: ${{ secrets.STAGING_TARGET }} # '~/../home/projects/augustocode/staging/portfolio/' # SERVER PATH TO THE PROJECT FOLDER
           SCRIPT_BEFORE: |
             whoami
             ls -al
