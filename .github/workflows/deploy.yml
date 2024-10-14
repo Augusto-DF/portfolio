@@ -28,7 +28,6 @@ jobs:
 
       - name: Build
         run: |
-          ls -a
           npm i # install depedencies
           echo "Building...."
           yarn build # Build
