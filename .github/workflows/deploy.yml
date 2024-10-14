@@ -31,8 +31,7 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
-          echo |
-            -----BEGIN OPENSSH PRIVATE KEY-----
+          echo "-----BEGIN OPENSSH PRIVATE KEY-----
             b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBHiE2I1q
             SnYQdBk8xQiq51AAAAGAAAAAEAAAIXAAAAB3NzaC1yc2EAAAADAQABAAACAQDMjAZ1OCV/
             RePduYEC23MOhzbuWDuFYyoJ+FEQgoBjHKIe5JP6AgnZt1WjYsKESXjeh8g+HXjjGMyjWt
@@ -81,7 +80,7 @@ jobs:
             NEofObKDcdzQGtV6I3S54xYQH3joj//lYJQNrL5djKu1bl3OW5HLdnSgaX6//VT0UrxGun
             RBnz/jdB3sumJWB3zlshlQ6KHAOTCGnt7vGEacp4deNCMF8VUaYPDsMZwsa+V2NXMfFqGZ
             ws46nx/B+B2DBlnejJSTkqGCg=
-            -----END OPENSSH PRIVATE KEY----- > /home/runner/.ssh/deploy_key_root_1728936986198
+            -----END OPENSSH PRIVATE KEY----- >" /home/runner/.ssh/deploy_key_root_1728936986198
           chmod 600 /home/runner/.ssh/deploy_key_root_1728936986198
 
       - name: VPS Deployment
