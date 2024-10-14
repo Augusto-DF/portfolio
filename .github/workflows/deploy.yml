@@ -93,7 +93,7 @@ jobs:
           REMOTE_HOST: '195.200.7.134'
           REMOTE_USER: 'root'
           REMOTE_PORT: 22
-          TARGET: '~/../home/projects/augustocode/staging/portfolio/'
+          TARGET: '~/../home/projects/augustocode/staging/'
           SCRIPT_BEFORE: |
             whoami
             ls -al
