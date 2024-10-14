@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Build
         run: |
-          cd ../
+          cd ../portfolio
           ls -a
           # git pull origin staging
           # rm -r build/
