@@ -14,15 +14,8 @@ jobs:
     steps:
       - name: Repo Checkout
         uses: actions/checkout@v4
-      - name: Build
-        run: |
-          ls -a
-          git pull origin staging
-          npm i # install depedencies
-          yarn
-          echo "Building...."
-          yarn build # Build
-          ls -a
+      - name: Pull staging
+        run: git pull origin staging
 
   deploy-staging:
     runs-on: ubuntu-latest
@@ -44,6 +37,7 @@ jobs:
       - name: VPS Deployment
         uses: easingthemes/ssh-deploy@main
         with:
+          # PRVATE KEY RSA ON PEM MODE
           SSH_PRIVATE_KEY: |
             -----BEGIN RSA PRIVATE KEY-----
             MIIJKQIBAAKCAgEAvzVOXxUMKwBkbQUCxTZ0o0Hd84TTKgg+swZTBArONoD9ANEd
@@ -97,12 +91,12 @@ jobs:
             CkwzmGvCbpGzK/YZqj9eCWoOR0CGuYwKjy8qeHJSiJP8O3PTKh0X48JqfiLK
             -----END RSA PRIVATE KEY-----
 
-          ARGS: '-rlgoDzvc -i --delete'
-          SOURCE: '' # Relative path pro root
-          REMOTE_HOST: '195.200.7.134'
-          REMOTE_USER: 'root'
-          REMOTE_PORT: 22
-          TARGET: '~/../home/projects/augustocode/staging/portfolio/'
+          ARGS: '-rlgoDzvc -i --delete' # I HAVE NO IDEA WHAT THIS MEANS, JUST COPY IT AND PRAY THAT NO ONE ASKS
+          SOURCE: '' # Relative path to the project root on remote repo (Github)
+          REMOTE_HOST: '195.200.7.134' # HOST IP OR URL
+          REMOTE_USER: 'root' # HOST USER
+          REMOTE_PORT: 22 # HOST PORT
+          TARGET: '~/../home/projects/augustocode/staging/portfolio/' # SERVER PATH TO THE PROJECT FOLDER
           SCRIPT_BEFORE: |
             whoami
             ls -al
