@@ -20,7 +20,6 @@ jobs:
           git pull origin staging
           npm i # install depedencies
           yarn
-          # [ -d "build/" ] && rm -r build/ # Remove build if it exists
           echo "Building...."
           yarn build # Build
           ls -a
@@ -31,8 +30,8 @@ jobs:
       name: staging
     needs: [build]
     steps:
-      - name: Repo Checkout
-        uses: actions/checkout@v4
+      # - name: Repo Checkout
+      #   uses: actions/checkout@v4
 
       - name: VPS Deployment
         uses: easingthemes/ssh-deploy@main
