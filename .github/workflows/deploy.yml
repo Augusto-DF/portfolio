@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  pull_staging:
     runs-on: ubuntu-latest
     steps:
       - name: Repo Checkout
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: staging
-    needs: [build]
+    needs: [pull_staging]
     steps:
       - name: Repo Checkout
         uses: actions/checkout@v4 # Necessary to access the remote repo
