@@ -11,51 +11,46 @@ export const data = {
     hero_image: '',
     hero_img_alt: '',
     about: {
-        description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit.',
-        client: 'We The Veterans',
+        description: 'Vetted is a platform created by veterans and military families that offers reliable information, service opportunities, and essential resources while promoting veteran-owned businesses and organizations to foster community growth.',
+        client: 'Vetted',
         start:{ year: '2024', month: 'Feb' },
         end:{ year: '', month: 'Now' },
         platform: 'Desktop/Mobile (Responsive)',
-        role: 'Front-end developer',
-        tools: [{label: '', icon: ''}]
+        href: 'https://getvetted.org/',
     },
     my_role: {        
-        description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit.',
         list: [
-            'Norem ipsum dolor sit amet, consectetur adipiscing elit.', 
-            'Norem ipsum dolor sit amet, consectetur adipiscing elit.', 
-            'Norem ipsum dolor sit amet, consectetur adipiscing elit.'
+            'I was hired as a React/Next Front-end Developer to create the Vetted website from scratch.', 
+            'I also managed the DevOps and back-end aspects of the project to ensure everything worked smoothly.'
         ]        
     },
     challenge: {
-        description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit.',
-        list: [
-            "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-        ]
+        description: 'The client wanted to create a hub for information, resources, and services tailored to veterans and military families. They reached out to me to step in as a Front-end Developer and bring the Vetted website to life.',
     },
-    acomplishments: {
+    solution: {
         list: [
-            "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Integrated the Vetted API, which aggregates news from a specific list of websites.",
+            "Developed the Vet Your Search, integrating both Google and Bing search APIs.",
+            "Integration with behavior analytics tools (Hotjar) to understand the users.",
+            "Implemented a security layer using Redis to prevent DDoS attacks and limit customer spending on Google and Bing APIs.",
+            "Conducted end-to-end tests with Playwright to make sure the code was solid and reliable."
         ],
+        solutionComplement: "And, of course, ensured everything was componentized and pixel-perfect while creating the front end of the website.",
         image: ""
     },
     learning: {
         list: [
             {
-                title: "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-                description: "Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+                title: "Problem-Solving & Versatility",
+                description: "Although I wasn’t a full-stack developer, I embraced the challenge of handling DevOps and back-end tasks. This pushed me to quickly expand my skills, adapt to new areas, and think beyond front-end development."
             },
             {
-                title: "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-                description: "Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+                title: "Importance of Testing:",
+                description: "Implementing end-to-end tests with Playwright reinforced the need for thorough testing to maintain code quality and stability."
             },
             {
-                title: "Norem ipsum dolor sit amet, consectetur adipiscing elit.",
-                description: "Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+                title: "New Skills:",
+                description: "I gained valuable experience implementing a security layer using Redis to prevent DDoS attacks and integrated behavior analytics tools like Hotjar to better understand user interactions and improve the platform's UX."
             }
         ],
         image: ''
