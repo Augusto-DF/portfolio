@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import FlagTag from '@components/flag-tag'
 import classnames from 'classnames'
 import ProjectCard from '@components/project-card'
+import Button from '@components/button'
 
 /* TODO: When there are at least 2 themes, define the type of data keeping in mind that in the future these data will be receive from BE instead from mocked data*/
 type ThemeAProps = { data: any }
@@ -17,14 +18,14 @@ const ThemeA = ({ data }: ThemeAProps) => {
     about,
     my_role,
     challenge,
-    acomplishments,
+    solution,
     learning,
     otherProjects,
   } = data
-  const { start, end, description, client, platform } = about
-  const { description: roleDescription, list: roleList } = my_role
-  const { description: challengeDescription, list: challengeList } = challenge
-  const { list: acomplishmentsList } = acomplishments
+  const { start, end, description, client, platform, href: webSiteHref } = about
+  const { list: roleList } = my_role
+  const { description: challengeDescription } = challenge
+  const { list: solutionList, solutionComplement } = solution
   const { list: learningList } = learning
 
   const timeStr = `• ${company} • ${year.join(' - ')}`
@@ -66,17 +67,31 @@ const ThemeA = ({ data }: ThemeAProps) => {
               <b>Platform: </b> {platform}
             </h5>
           </div>
+
+          <Button
+            onClick={() => {
+              window.open(webSiteHref, '_blank')
+            }}
+            label="View website"
+            hoverColor="#F0A471"
+          />
+        </div>
+        <hr />
+      </section>
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <h2>The challenge</h2>
+          <p>{challengeDescription}</p>
         </div>
         <hr />
       </section>
       <section className={styles.section}>
         <div className={styles.container}>
           <h2>My role</h2>
-          <p>{roleDescription}</p>
           <ul>
             {roleList.map((item: string, id: number) => (
               <li key={`role-list-${item}-${id}`}>
-                <p>• {item}</p>
+                <p>{item}</p>
               </li>
             ))}
           </ul>
@@ -85,32 +100,21 @@ const ThemeA = ({ data }: ThemeAProps) => {
       </section>
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2>The challenge and process</h2>
-          <p>{challengeDescription}</p>
+          <h2>Solution</h2>
+          <p>The solution involved several key steps:</p>
           <ul>
-            {challengeList.map((item: string, id: number) => (
-              <li key={`challenge-list-${item}-${id}`}>
-                <p>• {item}</p>
+            {solutionList.map((item: string, id: number) => (
+              <li key={`solution-list-${item}-${id}`}>
+                <p>{` • ${item}`}</p>
               </li>
             ))}
           </ul>
+          {solutionComplement && <p className={styles.complement}>{solutionComplement}</p>}
         </div>
       </section>
       <section className={styles.heroImg}>
         {/* TODO: Uncomment it when an image was added */}
         {/* <img src={data.challenge_img} alt={challenge_img_alt} /> */}
-      </section>
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <h2>Accomplishments</h2>
-          <ol start={1}>
-            {acomplishmentsList.map((item: string, id: number) => (
-              <li key={`acomplishment-list-${item}-${id}`}>
-                <p>{`${id + 1}. ${item}`}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
       </section>
       <section className={styles.heroImg}>
         {/* TODO: Uncomment it when an image was added */}
@@ -118,7 +122,7 @@ const ThemeA = ({ data }: ThemeAProps) => {
       </section>
       <section className={styles.section}>
         <div className={classnames(styles.container, styles.learning)}>
-          <h2>Learning & Takeaways</h2>
+          <h2>Learnings</h2>
           <ul>
             {learningList.map(
               (
