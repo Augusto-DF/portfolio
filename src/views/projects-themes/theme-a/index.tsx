@@ -21,6 +21,9 @@ const ThemeA = ({ data }: ThemeAProps) => {
     solution,
     learning,
     otherProjects,
+    hero_image,
+    hero_img_alt,
+    results,
   } = data
   const { start, end, description, client, platform, href: webSiteHref } = about
   const { list: roleList } = my_role
@@ -47,8 +50,7 @@ const ThemeA = ({ data }: ThemeAProps) => {
         </div>
       </section>
       <section className={styles.heroImg}>
-        {/* TODO: Uncomment it when an image was added */}
-        {/* <img src={data.hero_img} alt={hero_img_alt} /> */}
+        <img src={hero_image} alt={hero_img_alt} />
       </section>
       <section className={styles.section}>
         <div className={classnames(styles.container, styles.about)}>
@@ -112,13 +114,22 @@ const ThemeA = ({ data }: ThemeAProps) => {
           {solutionComplement && <p className={styles.complement}>{solutionComplement}</p>}
         </div>
       </section>
-      <section className={styles.heroImg}>
-        {/* TODO: Uncomment it when an image was added */}
-        {/* <img src={data.challenge_img} alt={challenge_img_alt} /> */}
-      </section>
-      <section className={styles.heroImg}>
-        {/* TODO: Uncomment it when an image was added */}
-        {/* <img src={data.accomplishments_img} alt={accomplishments_img_alt} /> */}
+      <section className={styles.results}>
+        <h2>Results</h2>
+        {results.map(
+          (
+            { src, alt, title: resultTitle }: { src: string; alt: string; title: string },
+            id: string
+          ) => (
+            <div
+              className={classnames(styles.heroImg, styles.resultsContainer)}
+              key={`result-${alt}-${id}`}
+            >
+              <h3>{resultTitle}</h3>
+              <img src={src} alt={alt} />
+            </div>
+          )
+        )}
       </section>
       <section className={styles.section}>
         <div className={classnames(styles.container, styles.learning)}>
@@ -137,10 +148,6 @@ const ThemeA = ({ data }: ThemeAProps) => {
             )}
           </ul>
         </div>
-      </section>
-      <section className={styles.heroImg}>
-        {/* TODO: Uncomment it when an image was added */}
-        {/* <img src={data.learning_img} alt={learning_img_alt} /> */}
       </section>
       <section className={classnames(styles.section, styles.otherProjects)}>
         <div className={styles.otherContainer}>
