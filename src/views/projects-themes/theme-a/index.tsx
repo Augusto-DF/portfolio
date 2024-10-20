@@ -104,7 +104,7 @@ const ThemeA = ({ data }: ThemeAProps) => {
         <div className={styles.container}>
           <h2>Solution</h2>
           <p>The solution involved several key steps:</p>
-          <ul>
+          <ul className={styles.solutionList}>
             {solutionList.map((item: string, id: number) => (
               <li key={`solution-list-${item}-${id}`}>
                 <p>{` • ${item}`}</p>

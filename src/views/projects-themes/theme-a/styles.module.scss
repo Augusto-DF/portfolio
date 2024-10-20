@@ -109,10 +109,6 @@
         li {
             line-height: initial;
             margin-top: 0.4rem;
-
-            p {
-                margin-left: 1.6rem;
-            }
         }
     }
 }
@@ -144,6 +140,12 @@
         background-color: $fenrir-brand-nut;
         color: $font-high;
         border-color: $font-high;
+    }
+}
+
+.solutionList {
+    li {
+        margin-left: 1.6rem;
     }
 }
 
