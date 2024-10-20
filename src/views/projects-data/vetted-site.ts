@@ -1,4 +1,8 @@
 import { PROJECTS } from "./utils"
+import vettedHeroImg from "@views/projects-data/assets/vetted/vetted-home-page.jpg"
+import vetthenewsPage from '@views/projects-data/assets/vetted/vet-the-news-page.jpg'
+import vetyoursearchPage from '@views/projects-data/assets/vetted/vet-your-search-page.jpg'
+import abaoutvettedPage from '@views/projects-data/assets/vetted/about-vetted-page.jpg'
 
 export {}
 
@@ -8,8 +12,8 @@ export const data = {
     company: 'Vetted',
     year: ['2024'],
     title: 'Keeping the veteran community strong',
-    hero_image: '',
-    hero_img_alt: '',
+    hero_image: vettedHeroImg,
+    hero_img_alt: 'Vetted home page',
     about: {
         description: 'Vetted is a platform created by veterans and military families that offers reliable information, service opportunities, and essential resources while promoting veteran-owned businesses and organizations to foster community growth.',
         client: 'Vetted',
@@ -55,6 +59,12 @@ export const data = {
         ],
         image: ''
     },
+    results: [
+        {title: "Vetted Homepage", src: vettedHeroImg, alt: "Vetted home page"},
+        {title: "Vet the News Page", src: vetthenewsPage, alt: "Vet the news page"},
+        {title: "Vet Your Search Page", src: vetyoursearchPage, alt: "Vet your search page"},
+        {title: "About Vetted", src: abaoutvettedPage, alt: "About vetted page"},
+    ],
     otherProjects: [
         {
             title: 'Nature themed wedding ',  
