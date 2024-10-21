@@ -42,6 +42,13 @@ export const data = {
         solutionComplement: "And, of course, ensured everything was componentized and pixel-perfect while creating the front end of the website.",
         image: ""
     },
+    
+    results: [
+        {title: "Vetted Homepage", src: vettedHeroImg, alt: "Vetted home page"},
+        {title: "Vet the News Page", src: vetthenewsPage, alt: "Vet the news page"},
+        {title: "Vet Your Search Page", src: vetyoursearchPage, alt: "Vet your search page"},
+        {title: "About Vetted", src: abaoutvettedPage, alt: "About vetted page"},
+    ],
     learning: {
         list: [
             {
@@ -56,15 +63,8 @@ export const data = {
                 title: "New Skills:",
                 description: "I gained valuable experience implementing a security layer using Redis to prevent DDoS attacks and integrated behavior analytics tools like Hotjar to better understand user interactions and improve the platform's UX."
             }
-        ],
-        image: ''
+        ]
     },
-    results: [
-        {title: "Vetted Homepage", src: vettedHeroImg, alt: "Vetted home page"},
-        {title: "Vet the News Page", src: vetthenewsPage, alt: "Vet the news page"},
-        {title: "Vet Your Search Page", src: vetyoursearchPage, alt: "Vet your search page"},
-        {title: "About Vetted", src: abaoutvettedPage, alt: "About vetted page"},
-    ],
     otherProjects: [
         {
             title: 'Nature themed wedding ',  

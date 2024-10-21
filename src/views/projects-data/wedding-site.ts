@@ -1,4 +1,9 @@
 import { PROJECTS } from "./utils"
+import weddingHero from '@views/projects-data/assets/wedding/wedding-hero.jpg'
+import weddinggiftList from '@views/projects-data/assets/wedding/gift-list-image.jpg'
+import weddingGiftListFlow from '@views/projects-data/assets/wedding/gift-list-flow-image.jpg'
+import countdown from '@views/projects-data/assets/wedding/countdown-image.jpg'
+import confirmationForm from '@views/projects-data/assets/wedding/confirmation-form-image.jpg'
 
 export {}
 
@@ -8,8 +13,8 @@ export const data = {
     company: 'Freelance',
     year: ['2024'],
     title: 'Nature themed wedding',
-    hero_image: '',
-    hero_img_alt: '',
+    hero_image: weddingHero,
+    hero_img_alt: 'Wedding website hero',
     about: {
         description: 'Our clients wanted a minimalist wedding website that include sections on outfits, venue, date, and gift list.',
         client: 'Freelancer',
@@ -22,28 +27,29 @@ export const data = {
     my_role: {        
         description: 'I was hired as a full-stack developer and was responsible for:',
         list: [
-            'Collaborating with the designer', 
-            'Defined the technical feasibility', 
-            'Chose the technologies', 
-            "Suggest alternative approaches to meet our client's needs"
+            'In this project, I worked as a full-stack developer, handling both the front-end and back-end', 
+            'I also managed all the steps to deploy both the API and the front-end, ensuring they went live successfully', 
+            'I was also responsible for setting everything up, including choosing the technologies.'
         ]        
     },
     challenge: {
-        description: 'The client had an initial design of the product but there where many elements missing. I was responsible for:',
-        list: [
-            "Implementing the count down",
-            "Build the gift list",
-            "Components creation",
-        ]
+        description: 'The clients wanted a website that captured the joy and excitement of their wedding, including a countdown to the big day, a guest RSVP form, and a way for guests to send gifts to the bride and groom. They provided an initial design, and I collaborated with a designer to bring their vision to life.',
     },
-    acomplishments: {
+    solution: {
         list: [
-            "Implementing the count down",
-            "Build the gift list",
-            "Components creation",
+            "At the clients' request, I implemented a countdown timer leading up to the big day.",
+            "Developed an API to securely store and manage guest information and gift data.",
+            "Implemented a user-friendly gift list flow to simplify the process of gifting the couple.",
+            "Created a confirmation form to allow guests to easily RSVP for the event.",
         ],
-        image: ""
     },
+    results: [
+        {title: "Wedding website hero", src: weddingHero, alt: "Wedding website hero"},
+        {title: "Countdown section", src: countdown, alt: "Countdown section"},
+        {title: "Gift list", src: weddinggiftList, alt: "Gift list"},
+        {title: "Gift list flow", src: weddingGiftListFlow, alt: "Gift list flow"},
+        {title: "Confirmation form section", src: confirmationForm, alt: "Confirmation form section"},
+    ],
     learning: {
         list: [
             {
@@ -58,8 +64,7 @@ export const data = {
                 title: "Receiving feedback and iterating",
                 description: "Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
             }
-        ],
-        image: ''
+        ]
     },
     otherProjects: [
         {
