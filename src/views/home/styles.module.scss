@@ -73,6 +73,16 @@ section {
     }
 }
 
+@include md-viewport {
+    .hero {
+        gap: 0;
+        justify-content: space-between;
+        .presentationContainer {
+            min-width: 26.5rem;           
+        }
+    }    
+}
+
 @include sm-viewport {
     .hero {
         flex-direction: column;
