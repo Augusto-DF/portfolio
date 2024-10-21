@@ -7,8 +7,9 @@ export const PROJECTS = {
         tags: [ 
             { label: 'React', tier: "ultimate" },
             { label: 'Next Js', tier: "mythic" },
-            { label: 'Typescript', tier: "mythic" },
-            { label: 'Redis', tier: "legend"}
+            { label: 'Playwright', tier: "mythic" },
+            { label: 'Redis', tier: "legend"},
+            { label: 'Typescript', tier: "rare" }
             ],
         country: 'usa',
     },
