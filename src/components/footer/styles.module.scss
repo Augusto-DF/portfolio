@@ -46,3 +46,27 @@ footer {
         gap: 1.6rem;
     }
 }
+
+@include sm-viewport {
+    footer {
+        padding: 10.4rem 1.6rem;
+
+        h2 {
+            font-size: $font-size-xxl;
+        }
+
+        h3 { 
+            font-size: 2rem;
+        }
+
+        .buttonContainer {
+            min-width: 32.8rem;
+            flex-wrap: wrap;
+            justify-content: stretch;
+
+            button {
+                flex: 1;
+            }
+        }
+    }
+}
