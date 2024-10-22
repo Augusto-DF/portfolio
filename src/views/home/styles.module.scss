@@ -20,6 +20,7 @@ section {
 
 .hero {
     width: 100%;
+    padding: 0 1.6rem;
     @include padding_top_bottom(8.8rem);
     background-color: $bg-dark;
     display: flex;
@@ -84,6 +85,10 @@ section {
 }
 
 @include sm-viewport {
+    section {
+        padding: 1.6rem;
+    }
+    
     .hero {
         padding-top: 15.2rem;
         flex-direction: column;
