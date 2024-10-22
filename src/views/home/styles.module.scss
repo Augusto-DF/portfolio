@@ -90,9 +90,10 @@ section {
     }
     
     .hero {
+        padding: 1.6rem;
         padding-top: 15.2rem;
         flex-direction: column;
-        gap: 12rem;
+        gap: 12rem;        
 
         .presentationContainer {
             button {
