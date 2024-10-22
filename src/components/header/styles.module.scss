@@ -1,5 +1,6 @@
 @import '@styles/colors.scss';
 @import '@styles/typography.scss';
+@import '@styles/media-queries.scss';
 
 @mixin hoverState {
     border-radius: 0.8rem;
@@ -45,4 +46,86 @@
     .socialWrapper {
         gap: 0.8rem;
     }
+}
+
+@include sm-viewport {
+    .headerComponent {
+        position: fixed;
+        width: 100%;
+        padding: 1.6rem;
+        grid-template-columns: 3rem auto 3.6rem;
+        align-items: center;
+        top: 0;
+        box-shadow: 0 0.2rem 1.2rem $fenrir-brand-cotton;
+
+        z-index: 10;
+
+        .sandwichMenu {
+            height: 3.6rem;
+            grid-column: 3;
+            padding: 0.8rem;
+            background-color: $fenrir-brand-cotton;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            display: flex;           
+            justify-content: center;  
+            border: 2px solid $fenrir-brand-dark;  
+            outline: 1px solid $fenrir-brand-cotton; 
+
+            .bar {
+                height: 0.2rem;
+                width: 100%;
+                border-radius: 2rem;
+                background-color: $fenrir-brand-dark;
+            }
+        }
+
+        .openedMenuIcon {
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            .bar1, .bar3 {
+                width: 16px;
+                position: absolute;
+                top: 50%;
+                transform-origin: center;
+                transform: rotate(45deg) translate(0, -50%);
+            }
+            .bar3 {
+                transform: rotate(135deg) translate(-5%, 0);
+            }
+            .bar2 {
+                display: none;
+            }
+        }
+
+        .closedMenuIcon {
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .openedMenu {
+            grid-column: span 3;
+        }
+
+        .closedMenu {
+            display: none;
+        }
+
+        .tabWrapper {
+            padding: 3.2rem 0;
+            flex-direction: column;
+          
+            li {
+                width: 24rem;
+                padding: 1.2rem 0;
+            }
+        }
+
+        .socialWrapper {
+            margin-top: 3.2rem;
+            gap: 1.6rem;
+        }
+    }
+    
 }

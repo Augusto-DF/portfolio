@@ -85,8 +85,15 @@ section {
 
 @include sm-viewport {
     .hero {
+        padding-top: 15.2rem;
         flex-direction: column;
         gap: 12rem;
+
+        .presentationContainer {
+            button {
+                width: 100%;
+            }
+        }
     }    
 }
 
