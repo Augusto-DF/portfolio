@@ -165,7 +165,6 @@
     }
 }
 
-
 .learning {
     padding: 6rem 0;
     
@@ -198,4 +197,57 @@
 
 .complement {
     margin-top: 2.4rem;
+}
+
+@include sm-viewport {
+    .hero {
+        padding: 12rem 3.2rem;
+
+        .heroContainer {
+            width: 29.6rem;
+
+            .tagContainer {
+                flex-wrap: wrap;
+            }
+
+            .flagContainer {
+                h3, span {
+                    font-size: $font-size-sm;
+                }
+            }
+
+            h2 {
+                font-size: $font-size-xxl;
+            }
+        }
+    }
+    
+    .heroImg {
+        padding: 6rem 3.2rem;
+    }
+
+    .about {
+        h3, h4, h5 {
+            font-size: $font-size-sm;
+        }
+    }
+
+    .results {
+        .resultsContainer {
+            padding: 6rem 3.2rem;
+        }
+    }
+
+    .otherProjects {
+        padding: 12rem 3.2rem;
+
+        .otherContainer {
+            width: 29.6rem;
+            grid-template-columns: 1fr;
+
+            & > h2 {
+                grid-column: span 1;
+            }
+        }
+    }
 }
