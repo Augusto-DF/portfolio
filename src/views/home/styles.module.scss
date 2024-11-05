@@ -10,8 +10,7 @@
     } @else {
         padding-top: $top;
         padding-bottom: $bottom;
-    }
-   
+    }   
 }
 
 section {
@@ -86,21 +85,25 @@ section {
 
 @include sm-viewport {
     section {
-        padding: 1.6rem;
+        padding: 1.6rem 3.2rem;
     }
     
     .hero {
-        padding: 1.6rem;
-        padding-top: 15.2rem;
+        padding: 15.2rem 3.2rem 1.6rem;
         flex-direction: column;
         gap: 12rem;        
 
         .presentationContainer {
+            width: 32rem;
             button {
                 width: 100%;
             }
         }
-    }    
+    }  
+
+    .worksContainer {
+        max-width: 3.2rem;
+    }  
 }
 
 
