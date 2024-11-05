@@ -71,7 +71,7 @@ export const data = {
             title: 'Vetted - Keeping the veteran community strong',  
             ...PROJECTS.vetted
         },  
-         {
+        /* {
             title: 'Refera - Comming soon...',  country: 'brazil',
             tags: [
                 { label: '???', tier: "rare" }, 
@@ -88,6 +88,6 @@ export const data = {
                 { label: '???', tier: "rare" }
             ],
             href: ''
-        },
+        }, */
     ]
 }

@@ -70,7 +70,7 @@ export const data = {
             title: 'Nature themed wedding ',  
             ...PROJECTS.wedding
         },  
-         {
+       /*  {
             title: 'Refera - Comming soon...',  country: 'brazil',
             tags: [
                 { label: '???', tier: "rare" }, 
@@ -87,6 +87,6 @@ export const data = {
                 { label: '???', tier: "rare" }
             ],
             href: ''
-        },
+        }, */
     ]
 }
