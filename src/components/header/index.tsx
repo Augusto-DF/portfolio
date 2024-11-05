@@ -9,9 +9,30 @@ import { ReactComponent as LinkedinIcon } from '@assets/icons/linkedin-icon.svg'
 import { HEADER_DATA } from './constants'
 import classnames from 'classnames'
 import { HOVER_COLORS } from 'src/libs/utils/hoverColors'
+import useWindowSize from '@hooks/use-window-size'
+import { useMemo, useState } from 'react'
 
 const Header = () => {
   const { pathname } = useLocation()
+  const { width } = useWindowSize()
+  const [isOpen, setIsOpen] = useState(false)
+  const isMobile = width && width < 704
+
+  const mobileMenuStyle = useMemo(() => {
+    if (isMobile) return isOpen ? [styles.openedMenu] : [styles.closedMenu]
+
+    return undefined
+  }, [isMobile, isOpen])
+
+  const toggleMenu = () => {
+    setIsOpen(prev => !prev)
+  }
+
+  const onSelectALink = (onClick?: () => void) => {
+    if (isMobile) toggleMenu()
+
+    onClick && onClick()
+  }
 
   const handleRedirect = (target: string) => {
     switch (target) {
@@ -29,43 +50,55 @@ const Header = () => {
       <Link to="/">
         <Logo />
       </Link>
-      <ul className={styles.tabWrapper}>
+      {isMobile && (
+        <button
+          type="button"
+          onClick={() => {
+            setIsOpen(prev => !prev)
+          }}
+          className={classnames(styles.sandwichMenu, {
+            [styles.openedMenuIcon]: isOpen,
+            [styles.closedMenuIcon]: !isOpen,
+          })}
+        >
+          <div className={classnames(styles.bar, styles.bar1)}></div>
+          <div className={classnames(styles.bar, styles.bar2)}></div>
+          <div className={classnames(styles.bar, styles.bar3)}></div>
+        </button>
+      )}
+      <ul className={classnames(styles.tabWrapper, mobileMenuStyle)}>
         {HEADER_DATA.map(({ label, href, onClick }, id) => (
           <Link to={href} key={href + id}>
-            <button onClick={onClick}>
+            <button onClick={() => onSelectALink(onClick)}>
               <li className={classnames({ [styles.active]: href === pathname })}>{label}</li>
             </button>
           </Link>
         ))}
       </ul>
 
-      <ul className={styles.socialWrapper}>
-        <Link to="">
-          <li>
-            <Button
-              hoverColor={HOVER_COLORS.ferir_nut}
-              theme="icon"
-              Icon={GithubIcon}
-              onClick={() => {
-                handleRedirect('github')
-              }}
-              styleTheme="light"
-            />
-          </li>
-        </Link>
-        <Link to="">
-          <li>
-            <Button
-              hoverColor={HOVER_COLORS.ferir_nut}
-              theme="icon"
-              Icon={LinkedinIcon}
-              onClick={() => {
-                handleRedirect('linkedin')
-              }}
-              styleTheme="light"
-            />
-          </li>
-        </Link>
+      <ul className={classnames(styles.socialWrapper, mobileMenuStyle)}>
+        <li>
+          <Button
+            hoverColor={HOVER_COLORS.ferir_nut}
+            theme="icon"
+            Icon={GithubIcon}
+            onClick={() => {
+              handleRedirect('github')
+            }}
+            styleTheme="light"
+          />
+        </li>
+        <li>
+          <Button
+            hoverColor={HOVER_COLORS.ferir_nut}
+            theme="icon"
+            Icon={LinkedinIcon}
+            onClick={() => {
+              handleRedirect('linkedin')
+            }}
+            styleTheme="light"
+          />
+        </li>
       </ul>
     </header>
   )

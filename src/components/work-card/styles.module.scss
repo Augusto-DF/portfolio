@@ -1,6 +1,7 @@
 @import '@styles/colors.scss';
 @import '@styles/typography.scss';
 @import '@styles/line-clamp.scss';
+@import '@styles/media-queries.scss';
 
 .card {
      border: 0.2rem solid $stroke-black;
@@ -74,5 +75,22 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.8rem;
+    }
+}
+
+@include sm-viewport {
+    .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .inverse {
+        .imageWrapper {
+            grid-area: 1 / 1;
+        }
+    
+        .contentWrapper {
+            grid-area: 2 / 1;
+        }
     }
 }

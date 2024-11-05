@@ -20,6 +20,7 @@ section {
 
 .hero {
     width: 100%;
+    padding: 0 1.6rem;
     @include padding_top_bottom(8.8rem);
     background-color: $bg-dark;
     display: flex;
@@ -73,9 +74,32 @@ section {
     }
 }
 
-@include sm-viewport {
+@include md-viewport {
     .hero {
+        gap: 0;
+        justify-content: space-between;
+        .presentationContainer {
+            min-width: 26.5rem;           
+        }
+    }    
+}
+
+@include sm-viewport {
+    section {
+        padding: 1.6rem;
+    }
+    
+    .hero {
+        padding: 1.6rem;
+        padding-top: 15.2rem;
         flex-direction: column;
+        gap: 12rem;        
+
+        .presentationContainer {
+            button {
+                width: 100%;
+            }
+        }
     }    
 }
 

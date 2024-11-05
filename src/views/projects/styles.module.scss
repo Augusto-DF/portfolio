@@ -24,3 +24,17 @@
         }
     }
 }
+
+@include sm-viewport {
+    .projectSection {
+        padding: 12rem 3.2rem;
+        
+        .projectWrpper {
+            width: 29.6rem;
+
+            .projectsContainer {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
