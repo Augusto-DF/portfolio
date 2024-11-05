@@ -85,16 +85,16 @@ section {
 
 @include sm-viewport {
     section {
-        padding: 1.6rem 2.4rem;
+        padding: 1.6rem 3.2rem;
     }
     
     .hero {
-        padding: 15.2rem 2.4rem 1.6rem;
+        padding: 15.2rem 3.2rem 1.6rem;
         flex-direction: column;
         gap: 12rem;        
 
         .presentationContainer {
-            width: 32rem;
+            width: 100%;
             button {
                 width: 100%;
             }
