@@ -29,6 +29,14 @@
 
 .imageWrapper {
     background-color: $default-card-bg;
+    padding: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+        max-width: 100%;
+    }
 }
 
 .contentWrapper {

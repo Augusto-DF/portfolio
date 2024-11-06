@@ -16,6 +16,8 @@ export type WorkCardProps = {
   tags: Array<TierTagProps>
   inverse?: boolean
   href: string
+  imgSrc?: string
+  imgAlt?: string
 }
 
 const WorkCard = ({
@@ -27,13 +29,15 @@ const WorkCard = ({
   tags,
   inverse = false,
   href,
+  imgSrc,
+  imgAlt,
 }: WorkCardProps) => {
   const durationStr = duration.join(' - ')
 
   return (
     <Link to={href}>
       <div className={classnames(styles.card, { [styles.inverse]: inverse })}>
-        <div className={styles.imageWrapper}></div>
+        <div className={styles.imageWrapper}>{imgSrc && <img src={imgSrc} alt={imgAlt} />}</div>
         <div className={styles.contentWrapper}>
           <div className={styles.flagWrapper}>
             <FlagTag countryFlag={country} />

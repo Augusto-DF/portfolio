@@ -1,3 +1,5 @@
+import VettedHomePageImg from "@views/projects-data/assets/vetted/vetted-home-page.jpg"
+import WeddingHomePageImg from "@views/projects-data/assets/wedding/wedding-hero.jpg"
 export {}
 
 // TODO: it will be removed when backend is built.
@@ -12,6 +14,8 @@ export const PROJECTS = {
             { label: 'Typescript', tier: "rare" }
             ],
         country: 'usa',
+        thumbSrc: VettedHomePageImg,
+        thumbAlt: 'Vetted home page'
     },
     wedding: {
         href: '/projects/wedding',
@@ -25,5 +29,7 @@ export const PROJECTS = {
             { label: 'SQL', tier: "rare" }
             ],
         country: 'brazil',
+        thumbSrc: WeddingHomePageImg,
+        thumbAlt: 'Wedding home page'
     },
 }
