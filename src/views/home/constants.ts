@@ -1,4 +1,5 @@
 import { WorkCardProps } from "@components/work-card"
+import { PROJECTS } from '@views/projects-data/utils'
 
 export {}
 
@@ -13,7 +14,9 @@ export const HOME_WORKS_CARD_LIST: Array<WorkCardProps> = [
         description: 'Vetted is a digital hub that supports veterans, veteran-owned businesses and journalism.',
         tags: [{tier: 'ultimate', label: 'Landing page'}, {tier: 'rare', label: 'Front-end'}],
         inverse: true,
-        href: '/projects/vetted'
+        href: '/projects/vetted',
+        thumbSrc: { desktop: PROJECTS.vetted.thumbSrc.desktop, mobile: PROJECTS.vetted.thumbSrc.mobile },
+        thumbAlt: PROJECTS.vetted.thumbAlt
     },    
     {
         country: 'brazil',
@@ -22,6 +25,8 @@ export const HOME_WORKS_CARD_LIST: Array<WorkCardProps> = [
         title: 'Nature themed wedding',
         description: 'Giving guests a way to find all information about their wedding.',
         tags: [{tier: 'ultimate', label: 'Landing page'}, {tier: 'rare', label: 'Front-end'}, {tier: 'legend', label: 'Back-end'}],
-        href: '/projects/wedding'
+        href: '/projects/wedding',
+        thumbSrc: { desktop: PROJECTS.wedding.thumbSrc.desktop, mobile: PROJECTS.wedding.thumbSrc.mobile },
+        thumbAlt: PROJECTS.wedding.thumbAlt
     },
 ]

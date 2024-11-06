@@ -66,7 +66,7 @@ export const data = {
             }
         ]
     },
-    otherProjects: [
+    otherProjects: [ 
         {
             title: 'Vetted - Keeping the veteran community strong',  
             ...PROJECTS.vetted

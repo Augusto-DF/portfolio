@@ -6,6 +6,7 @@ import TierTag, { TierTagProps } from '@components/tier-tag'
 
 import styles from './styles.module.scss'
 import classnames from 'classnames'
+import useWindowSize from '@hooks/use-window-size'
 
 export type WorkCardProps = {
   country: (typeof flagsKeys)[number]
@@ -16,6 +17,11 @@ export type WorkCardProps = {
   tags: Array<TierTagProps>
   inverse?: boolean
   href: string
+  thumbSrc?: {
+    desktop: string
+    mobile: string
+  }
+  thumbAlt?: string
 }
 
 const WorkCard = ({
@@ -27,13 +33,19 @@ const WorkCard = ({
   tags,
   inverse = false,
   href,
+  thumbSrc,
+  thumbAlt,
 }: WorkCardProps) => {
   const durationStr = duration.join(' - ')
+  const { width } = useWindowSize()
+  const isMobile = width && width < 704
 
   return (
     <Link to={href}>
       <div className={classnames(styles.card, { [styles.inverse]: inverse })}>
-        <div className={styles.imageWrapper}></div>
+        <div className={styles.imageWrapper}>
+          {thumbSrc && <img src={isMobile ? thumbSrc.mobile : thumbSrc.desktop} alt={thumbAlt} />}
+        </div>
         <div className={styles.contentWrapper}>
           <div className={styles.flagWrapper}>
             <FlagTag countryFlag={country} />
