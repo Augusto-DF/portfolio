@@ -2,7 +2,7 @@ import TierTag, { TierTagProps } from '@components/tier-tag'
 import styles from './styles.module.scss'
 import FlagTag from '@components/flag-tag'
 import classnames from 'classnames'
-import ProjectCard from '@components/project-card'
+import ProjectCard, { ProjectCardProps } from '@components/project-card'
 import Button from '@components/button'
 
 /* TODO: When there are at least 2 themes, define the type of data keeping in mind that in the future these data will be receive from BE instead from mocked data*/
@@ -152,23 +152,8 @@ const ThemeA = ({ data }: ThemeAProps) => {
       <section className={classnames(styles.section, styles.otherProjects)}>
         <div className={styles.otherContainer}>
           <h2>Other projects</h2>
-          {otherProjects.map((other: any, id: number) => {
-            const {
-              title: otherTitle,
-              country: otherCountry,
-              tags: otherTags,
-              href: otherHref,
-            } = other
-
-            return (
-              <ProjectCard
-                key={`other-${otherTitle}-${id}`}
-                title={otherTitle}
-                href={otherHref}
-                tags={otherTags}
-                country={otherCountry}
-              />
-            )
+          {otherProjects.map((other: ProjectCardProps, id: number) => {
+            return <ProjectCard key={`other-${other.title}-${id}`} {...other} />
           })}
         </div>
       </section>

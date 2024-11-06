@@ -15,8 +15,8 @@ export const HOME_WORKS_CARD_LIST: Array<WorkCardProps> = [
         tags: [{tier: 'ultimate', label: 'Landing page'}, {tier: 'rare', label: 'Front-end'}],
         inverse: true,
         href: '/projects/vetted',
-        imgSrc: PROJECTS.vetted.thumbSrc,
-        imgAlt: PROJECTS.vetted.thumbAlt
+        thumbSrc: { desktop: PROJECTS.vetted.thumbSrc.desktop, mobile: PROJECTS.vetted.thumbSrc.mobile },
+        thumbAlt: PROJECTS.vetted.thumbAlt
     },    
     {
         country: 'brazil',
@@ -26,7 +26,7 @@ export const HOME_WORKS_CARD_LIST: Array<WorkCardProps> = [
         description: 'Giving guests a way to find all information about their wedding.',
         tags: [{tier: 'ultimate', label: 'Landing page'}, {tier: 'rare', label: 'Front-end'}, {tier: 'legend', label: 'Back-end'}],
         href: '/projects/wedding',
-        imgSrc: PROJECTS.wedding.thumbSrc,
-        imgAlt: PROJECTS.wedding.thumbAlt
+        thumbSrc: { desktop: PROJECTS.wedding.thumbSrc.desktop, mobile: PROJECTS.wedding.thumbSrc.mobile },
+        thumbAlt: PROJECTS.wedding.thumbAlt
     },
 ]

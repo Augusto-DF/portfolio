@@ -1,6 +1,9 @@
 import VettedHomePageImg from "@views/projects-data/assets/vetted/vetted-home-page.jpg"
+import VettedHomePageMobileImg from "@views/projects-data/assets/vetted/vetted-home-page-mobile.jpg"
 import WeddingHomePageImg from "@views/projects-data/assets/wedding/wedding-hero.jpg"
+import WeddingHomePageMobileImg from "@views/projects-data/assets/wedding/wedding-hero-mobile.jpg"
 export {}
+
 
 // TODO: it will be removed when backend is built.
 export const PROJECTS = {
@@ -14,7 +17,7 @@ export const PROJECTS = {
             { label: 'Typescript', tier: "rare" }
             ],
         country: 'usa',
-        thumbSrc: VettedHomePageImg,
+        thumbSrc: {desktop: VettedHomePageImg, mobile: VettedHomePageMobileImg},
         thumbAlt: 'Vetted home page'
     },
     wedding: {
@@ -29,7 +32,7 @@ export const PROJECTS = {
             { label: 'SQL', tier: "rare" }
             ],
         country: 'brazil',
-        thumbSrc: WeddingHomePageImg,
+        thumbSrc: { desktop: WeddingHomePageImg, mobile: WeddingHomePageMobileImg },
         thumbAlt: 'Wedding home page'
     },
 }

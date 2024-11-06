@@ -24,6 +24,12 @@
         height: 22rem;
         min-height: 22rem;
         background-color: #dee7ff;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 100%;
+        }
     }
 
     h2 {
@@ -37,5 +43,18 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.8rem;
+    }
+}
+
+@include sm-viewport {
+    .cardContainer {
+        .imageContainer {
+            align-items: initial;
+            justify-content: center;
+
+            img {
+                width: initial;
+            }
+        }
     }
 }
