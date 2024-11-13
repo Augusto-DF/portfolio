@@ -13,7 +13,10 @@ const Footer = () => {
         window.open('https://www.linkedin.com/in/augustocode/', '_blank')
         break
       case 'download':
-        // TODO: Trigger CV download.
+        window.open(
+          'https://drive.google.com/file/d/1Jllm2xV2mCNJxACFPn2N0TRBfpoqQ5Ie/view?usp=drive_link',
+          '_blank'
+        )
         break
     }
   }

@@ -22,7 +22,8 @@ export const data = {
         end:{ year: '2024', month: 'Jul' },
         platform: 'Desktop/Mobile (Responsive)',
         role: 'Front-end & back-end developer, Dev Ops',
-        tools: [{label: '', icon: ''}]
+        tools: [{label: '', icon: ''}],
+        href: 'https://mariaemiguel.com.br/'
     },
     my_role: {        
         description: 'I was hired as a full-stack developer and was responsible for:',
