@@ -1,0 +1,47 @@
+name: Master portfolio deployment
+
+on:
+  push:
+    branches: [master]
+
+  workflow_dispatch:
+
+jobs:
+  pull_master:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo Checkout
+        uses: actions/checkout@v4
+      - name: Pull master
+        run: git pull origin master
+
+  deploy-master:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+    needs: [pull_master]
+    steps:
+      - name: Repo Checkout
+        uses: actions/checkout@v4 # Necessary to access the remote repo
+
+      - name: Build
+        run: |
+          npm i # install depedencies
+          echo "Building...."
+          yarn build # Build
+          ls -a
+
+      - name: VPS Deployment
+        uses: easingthemes/ssh-deploy@main # Necessary to access the host via ssh doc:https://github.com/easingthemes/ssh-deploy
+        with:
+          # PRVATE KEY RSA ON PEM MODE
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: '-rlgoDzvc -i --delete' # I HAVE NO IDEA WHAT THIS MEANS, JUST COPY IT AND PRAY THAT NO ONE ASKS
+          SOURCE: '' # Relative path to the project root on remote repo (Github)
+          REMOTE_HOST: ${{ secrets.HOST_SERVER }} # HOST IP OR URL
+          REMOTE_USER: ${{ secrets.HOST_USER }} # HOST USER
+          REMOTE_PORT: 22 # HOST PORT
+          TARGET: ${{ secrets.PRODUCTION_TARGET }} # '~/../home/projects/augustocode/staging/portfolio/' # SERVER PATH TO THE PROJECT FOLDER
+          SCRIPT_BEFORE: |
+            whoami
+            ls -al
