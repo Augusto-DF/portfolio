@@ -27,7 +27,7 @@ export const FOOTER_BUTTON_LIST = [
     theme: "icon", 
     Icon: DownloadIcon , 
     iconPosition: "right", 
-    label: "Download my resume",
+    label: "Download resume",
     value: 'download',
     hoverColor: HOVER_COLORS.fenrir_mythic
 },
