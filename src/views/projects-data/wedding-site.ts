@@ -54,16 +54,12 @@ export const data = {
     learning: {
         list: [
             {
-                title: "Creating and managing design system at scale",
-                description: "Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+                title: "Back-end development",
+                description: "This project was my first time building a complete backend. I created a simple REST API to connect with a database that stores guest and gift information. Using an ORM to manage the database would be easier, but I went with SQLite, because I wanted to dig into every aspect of backend development and still keep things solid and reliable. My next step is to try out ORMs like Sequelize or Mongoose, which should speed up the development process"
             },
             {
-                title: "Balancing pace and perfection",
-                description: "Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
-            },
-            {
-                title: "Receiving feedback and iterating",
-                description: "Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+                title: "Deploy and Atomation",
+                description: "Even though this was a small project, I noticed early on that the client would request a lot of changes during development. So, I set up GitHub Actions to automate the deployment process, which really sped things up since I didn’t have to do this step manually anymore"
             }
         ]
     },
