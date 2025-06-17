@@ -36,7 +36,7 @@ jobs:
         with:
           # PRVATE KEY RSA ON PEM MODE
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: '-rlgoDzvc -i --delete' # I HAVE NO IDEA WHAT THIS MEANS, JUST COPY IT AND PRAY THAT NO ONE ASKS
+          ARGS: '-rlgoDzvc -i --delete' # I HAVE NO IDEA WHAT THIS MEANS, JUST COPY IT AND PRAY THAT NO ONE ASKSS
           SOURCE: '' # Relative path to the project root on remote repo (Github)
           REMOTE_HOST: ${{ secrets.HOST_SERVER }} # HOST IP OR URL
           REMOTE_USER: ${{ secrets.HOST_USER }} # HOST USER
