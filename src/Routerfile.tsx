@@ -1,6 +1,7 @@
 import Footer from '@components/footer'
 import Header from '@components/header'
 import Home from '@views/home'
+import GamePortfolioView from '@views/portfolio-game-version'
 import Projects from '@views/projects'
 import Themes from '@views/projects-themes'
 import { useEffect } from 'react'
@@ -17,6 +18,7 @@ const Routerfile = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/v2" element={<GamePortfolioView />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:targetProject" element={<Themes />} />
         {/* <Route path="*" element={<NotFound />} /> */}
