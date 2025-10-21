@@ -7,7 +7,7 @@ const GamePortfolioView = () => {
   }
 
   const phaserConfig = {}
-  const game = Phaser(phaserConfig)
+  //const game = Phaser(phaserConfig)
 
   return <div style={containerStyle}>GamePortfolioView</div>
 }
