@@ -11,6 +11,7 @@ import classnames from 'classnames'
 import { HOVER_COLORS } from 'src/libs/utils/hoverColors'
 import useWindowSize from '@hooks/use-window-size'
 import { useMemo, useState } from 'react'
+import Arise from '@components/animated/arise'
 
 const Header = () => {
   const { pathname } = useLocation()
@@ -77,28 +78,30 @@ const Header = () => {
       </ul>
 
       <ul className={classnames(styles.socialWrapper, mobileMenuStyle)}>
-        <li>
-          <Button
-            hoverColor={HOVER_COLORS.ferir_nut}
-            theme="icon"
-            Icon={GithubIcon}
-            onClick={() => {
-              handleRedirect('github')
-            }}
-            styleTheme="light"
-          />
-        </li>
-        <li>
-          <Button
-            hoverColor={HOVER_COLORS.ferir_nut}
-            theme="icon"
-            Icon={LinkedinIcon}
-            onClick={() => {
-              handleRedirect('linkedin')
-            }}
-            styleTheme="light"
-          />
-        </li>
+        <Arise>
+          <li>
+            <Button
+              hoverColor={HOVER_COLORS.ferir_nut}
+              theme="icon"
+              Icon={GithubIcon}
+              onClick={() => {
+                handleRedirect('github')
+              }}
+              styleTheme="light"
+            />
+          </li>
+          <li>
+            <Button
+              hoverColor={HOVER_COLORS.ferir_nut}
+              theme="icon"
+              Icon={LinkedinIcon}
+              onClick={() => {
+                handleRedirect('linkedin')
+              }}
+              styleTheme="light"
+            />
+          </li>
+        </Arise>
       </ul>
     </header>
   )
