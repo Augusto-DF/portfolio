@@ -11,7 +11,7 @@ import classnames from 'classnames'
 import { HOVER_COLORS } from 'src/libs/utils/hoverColors'
 import useWindowSize from '@hooks/use-window-size'
 import { useMemo, useState } from 'react'
-import Arise from '@components/animated/arise'
+//import Arise from '@components/animated/arise'
 
 const Header = () => {
   const { pathname } = useLocation()
