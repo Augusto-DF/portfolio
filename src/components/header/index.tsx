@@ -78,7 +78,6 @@ const Header = () => {
       </ul>
 
       <ul className={classnames(styles.socialWrapper, mobileMenuStyle)}>
-        <Arise>
           <li>
             <Button
               hoverColor={HOVER_COLORS.ferir_nut}
@@ -101,7 +100,6 @@ const Header = () => {
               styleTheme="light"
             />
           </li>
-        </Arise>
       </ul>
     </header>
   )
