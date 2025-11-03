@@ -11,6 +11,7 @@ import classnames from 'classnames'
 import { HOVER_COLORS } from 'src/libs/utils/hoverColors'
 import useWindowSize from '@hooks/use-window-size'
 import { useMemo, useState } from 'react'
+import Arise from '@components/animated/arise'
 //import Arise from '@components/animated/arise'
 
 const Header = () => {
@@ -78,6 +79,7 @@ const Header = () => {
       </ul>
 
       <ul className={classnames(styles.socialWrapper, mobileMenuStyle)}>
+        <Arise delay={0.1}>
           <li>
             <Button
               hoverColor={HOVER_COLORS.ferir_nut}
@@ -100,6 +102,7 @@ const Header = () => {
               styleTheme="light"
             />
           </li>
+        </Arise>
       </ul>
     </header>
   )
