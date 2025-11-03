@@ -13,6 +13,7 @@ type AriseType = {
 
 const Arise = ({ children }: AriseType) => {
   const childrenList = Array.isArray(children) ? children : new Array(children)
+
   const ariseChildren = () => {
     return childrenList.map((child, index) => {
       if (typeof child === 'number' || typeof child === 'string') return <></>
@@ -24,10 +25,9 @@ const Arise = ({ children }: AriseType) => {
           transition={{
             duration: 0.7,
             scale: { type: 'spring', bounce: 0.5, delay: index * 0.7 },
-            delay: index * 0.7,
           }}
-          /* onAnimationStart={}
-          onAnimationComplete={} */
+          // onAnimationStart={}
+          // onAnimationComplete={}
         >
           {child}
         </motion.div>
