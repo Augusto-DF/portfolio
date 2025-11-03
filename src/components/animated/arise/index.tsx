@@ -9,9 +9,10 @@ type ChildrenType =
 
 type AriseType = {
   children: Array<ChildrenType> | ChildrenType
+  delay?: number
 }
 
-const Arise = ({ children }: AriseType) => {
+const Arise = ({ children, delay = 0.5 }: AriseType) => {
   const childrenList = Array.isArray(children) ? children : new Array(children)
 
   const ariseChildren = () => {
@@ -21,10 +22,10 @@ const Arise = ({ children }: AriseType) => {
       return (
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.7,
-            scale: { type: 'spring', bounce: 0.5, delay: index * 0.7 },
+            scale: { type: 'spring', bounce: 0.5, delay: index * delay },
           }}
           // onAnimationStart={}
           // onAnimationComplete={}
