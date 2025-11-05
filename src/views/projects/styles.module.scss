@@ -1,40 +1,40 @@
 @import '@styles/typography.scss';
-@import '@styles/colors.scss';
+@import '@styles/colors.module.scss';
 @import '@styles/media-queries.scss';
 
 .projectSection {
-    padding: 12rem 0;
-    background-color: $bg-blue;
-    
-    .projectWrpper {
-        width: 104rem;
-        margin: 0 auto;
+  padding: 12rem 0;
+  background-color: $bg-blue;
 
-        h1 {
-            font-size: $font-size-xl;
-            font-weight: $font-weight-bold;
-            color: $font-high;
-        }
+  .projectWrpper {
+    width: 104rem;
+    margin: 0 auto;
 
-        .projectsContainer {
-            margin-top: 4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.4rem;
-        }
+    h1 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $font-high;
     }
+
+    .projectsContainer {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.4rem;
+    }
+  }
 }
 
 @include sm-viewport {
-    .projectSection {
-        padding: 12rem 3.2rem;
-        
-        .projectWrpper {
-            width: 29.6rem;
+  .projectSection {
+    padding: 12rem 3.2rem;
 
-            .projectsContainer {
-                grid-template-columns: 1fr;
-            }
-        }
+    .projectWrpper {
+      width: 29.6rem;
+
+      .projectsContainer {
+        grid-template-columns: 1fr;
+      }
     }
+  }
 }
