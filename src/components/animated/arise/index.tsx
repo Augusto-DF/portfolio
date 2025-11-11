@@ -23,6 +23,7 @@ const Arise = ({ children, delay = 0.5 }: AriseType) => {
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.7,
             scale: { type: 'spring', bounce: 0.5, delay: index * delay },
