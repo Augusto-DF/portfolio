@@ -1,21 +1,22 @@
 // TODO: Add a way to get the target size to no need change de positionX every time it changes
-// TODO Add a tag color props
 import * as motion from 'motion/react-client'
 import { useAnimate, useInView, type AnimationSequence } from 'motion/react'
-import TierTag from '@components/tier-tag'
+import TierTag, { TierTagProps } from '@components/tier-tag'
 import { useEffect } from 'react'
 
 type FallingTagType = {
   target: React.ReactNode
   positionX?: number
-  tagLabel: string
+  tagProps: TierTagProps
+  //tagLabel: string
+  //tier?: 'legend' | 'ultimate' | 'mythic' | 'rare' | undefined
 }
 
 const fallingTagStyles = {
   display: 'flex',
 }
 
-const FallingTag = ({ target, positionX = 50, tagLabel }: FallingTagType) => {
+const FallingTag = ({ target, positionX = 50, tagProps }: FallingTagType) => {
   const [animatedTagRef, animateTag] = useAnimate()
   const isInView = useInView(animatedTagRef, { once: true })
 
@@ -33,7 +34,7 @@ const FallingTag = ({ target, positionX = 50, tagLabel }: FallingTagType) => {
     ]
 
     animateTag(animatedTagSequence)
-  }, [animateTag, isInView])
+  }, [isInView, animatedTagRef, animateTag])
 
   return (
     <div style={{ ...fallingTagStyles, position: 'relative' }}>
@@ -51,7 +52,7 @@ const FallingTag = ({ target, positionX = 50, tagLabel }: FallingTagType) => {
           rotate: -10,
         }}
       >
-        <TierTag label={tagLabel} />
+        <TierTag {...tagProps} />
       </motion.div>
     </div>
   )
