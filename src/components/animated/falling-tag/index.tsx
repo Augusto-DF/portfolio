@@ -8,8 +8,6 @@ type FallingTagType = {
   target: React.ReactNode
   positionX?: number
   tagProps: TierTagProps
-  //tagLabel: string
-  //tier?: 'legend' | 'ultimate' | 'mythic' | 'rare' | undefined
 }
 
 const fallingTagStyles = {
