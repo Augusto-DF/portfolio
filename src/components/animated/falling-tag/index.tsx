@@ -2,11 +2,12 @@
 import * as motion from 'motion/react-client'
 import { useAnimate, useInView, type AnimationSequence } from 'motion/react'
 import TierTag, { TierTagProps } from '@components/tier-tag'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 type FallingTagType = {
   target: React.ReactNode
   positionX?: number
+  heightDrop?: number
   tagProps: TierTagProps
 }
 
@@ -14,9 +15,10 @@ const fallingTagStyles = {
   display: 'flex',
 }
 
-const FallingTag = ({ target, positionX = 50, tagProps }: FallingTagType) => {
+const FallingTag = ({ target, heightDrop = -300, positionX = 50, tagProps }: FallingTagType) => {
   const [animatedTagRef, animateTag] = useAnimate()
-  const isInView = useInView(animatedTagRef, { once: true })
+  const targetRef = useRef(null)
+  const isInView = useInView(targetRef, { once: true, amount: 1, margin: '-200px' })
 
   useEffect(() => {
     if (!animatedTagRef.current) return
@@ -36,7 +38,7 @@ const FallingTag = ({ target, positionX = 50, tagProps }: FallingTagType) => {
 
   return (
     <div style={{ ...fallingTagStyles, position: 'relative' }}>
-      <div>{target}</div>
+      <div ref={targetRef}>{target}</div>
 
       <motion.div
         ref={animatedTagRef}
@@ -44,7 +46,7 @@ const FallingTag = ({ target, positionX = 50, tagProps }: FallingTagType) => {
         viewport={{ once: true }}
         initial={{
           opacity: 0,
-          y: -200,
+          y: heightDrop,
           x: positionX,
           transformOrigin: 'left center',
           rotate: -10,
