@@ -1,11 +1,6 @@
 import React from 'react'
 import * as motion from 'motion/react-client'
-
-type ChildrenType =
-  | string
-  | number
-  | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-  | React.ReactPortal
+import { ChildrenType } from '@components/utils'
 
 type AriseType = {
   children: Array<ChildrenType> | ChildrenType
