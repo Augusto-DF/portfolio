@@ -8,6 +8,7 @@ type FallingTagType = {
   target: React.ReactNode
   positionX?: number
   heightDrop?: number
+  positionHeight?: number
   tagProps: TierTagProps
 }
 
@@ -15,7 +16,13 @@ const fallingTagStyles = {
   display: 'flex',
 }
 
-const FallingTag = ({ target, heightDrop = -300, positionX = 50, tagProps }: FallingTagType) => {
+const FallingTag = ({
+  target,
+  heightDrop = -300,
+  positionX = 50,
+  positionHeight = 8,
+  tagProps,
+}: FallingTagType) => {
   const [animatedTagRef, animateTag] = useAnimate()
   const targetRef = useRef(null)
   const isInView = useInView(targetRef, { once: true, amount: 1, margin: '-200px' })
@@ -38,17 +45,20 @@ const FallingTag = ({ target, heightDrop = -300, positionX = 50, tagProps }: Fal
 
   return (
     <div style={{ ...fallingTagStyles, position: 'relative' }}>
-      <div ref={targetRef}>{target}</div>
+      <div style={{ position: 'relative', zIndex: 10 }} ref={targetRef}>
+        {target}
+      </div>
 
       <motion.div
         ref={animatedTagRef}
-        style={{ position: 'absolute' }}
+        style={{ position: 'absolute', zIndex: 9 }}
         viewport={{ once: true }}
         initial={{
           opacity: 0,
           y: heightDrop,
           x: positionX,
           transformOrigin: 'left center',
+          marginTop: positionHeight,
           rotate: -10,
         }}
       >
