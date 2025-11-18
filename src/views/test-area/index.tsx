@@ -2,77 +2,32 @@ import AnimatedButton from '@components/animated/animated-button'
 import { ReactComponent as Github } from '@assets/icons/github-icon.svg'
 
 import * as motion from 'motion/react-client'
-import { useAnimate, type AnimationSequence } from 'motion/react'
-import TierTag from '@components/tier-tag'
-import { useElementRect } from 'src/hooks/useElementSettings'
-import { useEffect } from 'react'
-
-type FallingTagType = {
-  target: React.ReactNode
-}
-
-const fallingTagStyles = {
-  display: 'flex',
-}
-
-const FallingTag = ({ target }: FallingTagType) => {
-  const [ref, targetAttr] = useElementRect<HTMLDivElement>()
-  const [animatedTagRef, animateTag] = useAnimate()
-
-  useEffect(() => {
-    if (!animatedTagRef.current) return
-
-    const animatedTagSequence: AnimationSequence = [
-      [animatedTagRef.current, { opacity: 1, y: -7 }, { duration: 0.4 }],
-      [animatedTagRef.current, { rotate: 360 }, { duration: 0.5 }],
-    ]
-
-    animateTag(animatedTagSequence)
-  }, [animateTag, targetAttr])
-
-  //console.log('targetAttr', targetAttr?.width)
-  return (
-    <div style={{ ...fallingTagStyles, position: 'relative' }}>
-      <div ref={ref}>{target}</div>
-      {targetAttr?.offsetWidth && (
-        <motion.div
-          ref={animatedTagRef}
-          style={{ position: 'absolute' }}
-          //visible={!!targetAttr?.width}
-          initial={{
-            opacity: 0,
-            y: -100,
-            x: targetAttr?.offsetWidth - 5,
-            transformOrigin: 'left center',
-          }}
-          animate={
-            {
-              /*   opacity: 1,
-            rotate: 360,
-            animationDuration: 0.5, */
-              //y: -7,
-              //x: targetAttr?.offsetWidth - 5,
-            }
-          }
-        >
-          <TierTag label="testtttttt" />
-        </motion.div>
-      )}
-    </div>
-  )
-}
+import FallingTag from '@components/animated/falling-tag'
+import MoveIn from '@components/animated/move-in'
 
 const TestArea = () => {
   return (
     <>
+      <div style={{ ...style, flexWrap: 'wrap' }}>
+        <MoveIn direction="up">
+          <div style={{ width: 600, height: 380, backgroundColor: '#4a7ea9ff' }}></div>
+          <div style={{ width: 600, height: 380, backgroundColor: '#4aa994ff' }}></div>
+          <div style={{ width: 600, height: 380, backgroundColor: '#bbbf80ff' }}></div>
+          <div style={{ width: 600, height: 380, backgroundColor: '#e1bdd1ff' }}></div>
+        </MoveIn>
+      </div>
       <div style={style}>
-        <FallingTag target={<h1 style={{ fontSize: 20, color: '#fff' }}>Target</h1>} />
+        <FallingTag
+          tagProps={{ label: 'nina', tier: 'mythic' }}
+          positionX={68}
+          target={<h1 style={{ fontSize: 20, color: '#fff' }}>Fenrir</h1>}
+        />
       </div>
       {/* <div style={{ width: '100%', height: '100vh', backgroundColor: '#000' }}></div> */}
       <div style={style}>
         {/* <motion.div
           style={squireTarget()}
-          animate={{
+          animate={{ 
             scale: [null, 0.2, 4, 1],
             transition: {
               duration: 3,
@@ -129,8 +84,8 @@ const squireTarget = (color = '#d089dcff') => ({
 // #d4476ff
 
 const style = {
-  width: '100vw',
-  height: '80vh',
+  width: '100%',
+  minHeight: '80vh',
   backgroundColor: '#282930' /* '#e0e0e0', */,
   display: 'flex',
   justifyContent: 'center',
