@@ -45,13 +45,13 @@ const FallingTag = ({
 
   return (
     <div style={{ ...fallingTagStyles, position: 'relative' }}>
-      <div style={{ position: 'relative', zIndex: 10 }} ref={targetRef}>
+      <div style={{ position: 'relative', zIndex: 2 }} ref={targetRef}>
         {target}
       </div>
 
       <motion.div
         ref={animatedTagRef}
-        style={{ position: 'absolute', zIndex: 9 }}
+        style={{ position: 'absolute', zIndex: 1 }}
         viewport={{ once: true }}
         initial={{
           opacity: 0,
