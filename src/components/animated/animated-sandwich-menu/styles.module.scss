@@ -1,0 +1,18 @@
+@import '@styles/colors.module.scss';
+
+.menuContainer {
+  width: 46px;
+  height: 46px;
+  position: relative;
+  padding: 0.8rem 0.6rem;
+  cursor: pointer;
+  background-color: $fenrir-brand-cotton;
+  border-radius: 1rem;
+  border: 2px solid $fenrir-brand-dark;
+  outline: 1px solid $fenrir-brand-cotton;
+
+  svg {
+    display: flex;
+    flex-direction: column;
+  }
+}
