@@ -4,12 +4,16 @@ import { ReactComponent as Github } from '@assets/icons/github-icon.svg'
 import * as motion from 'motion/react-client'
 import FallingTag from '@components/animated/falling-tag'
 import MoveIn from '@components/animated/move-in'
+import AnimatedSandwichMenuButton from '@components/animated/animated-sandwich-menu'
 
 const TestArea = () => {
   return (
     <>
+      <div style={style}>
+        <AnimatedSandwichMenuButton />
+      </div>
       <div style={{ ...style, flexWrap: 'wrap' }}>
-        <MoveIn direction="up">
+        <MoveIn direction={['left', 'right', 'up', 'down']}>
           <div style={{ width: 600, height: 380, backgroundColor: '#4a7ea9ff' }}></div>
           <div style={{ width: 600, height: 380, backgroundColor: '#4aa994ff' }}></div>
           <div style={{ width: 600, height: 380, backgroundColor: '#bbbf80ff' }}></div>
@@ -19,26 +23,11 @@ const TestArea = () => {
       <div style={style}>
         <FallingTag
           tagProps={{ label: 'nina', tier: 'mythic' }}
-          positionX={68}
+          positionX={62}
           target={<h1 style={{ fontSize: 20, color: '#fff' }}>Fenrir</h1>}
         />
       </div>
-      {/* <div style={{ width: '100%', height: '100vh', backgroundColor: '#000' }}></div> */}
       <div style={style}>
-        {/* <motion.div
-          style={squireTarget()}
-          animate={{ 
-            scale: [null, 0.2, 4, 1],
-            transition: {
-              duration: 3,
-              times: [0, 0.3, 0.4, 1],
-              //repeat: Infinity,
-              //repeatDelay: 1,
-              ease: ['easeInOut', 'easeOut'],
-            },
-          }}
-        /> */}
-
         <AnimatedButton styleTheme="dark" onClick={() => {}} label="Test" hoverColor="#5EC2EB" />
         <AnimatedButton
           onClick={() => {}}
@@ -55,10 +44,10 @@ const TestArea = () => {
         >
           test
         </motion.button>
-
+      </div>
+      <div style={style}>
         <motion.div
           style={squireTarget('#6f85c1ff')}
-          //initial={}
           animate={{
             transition: {
               duration: 1,
