@@ -5,9 +5,10 @@ import { ChildrenType } from '@components/utils'
 type AriseType = {
   children: Array<ChildrenType> | ChildrenType
   delay?: number
+  duration?: number
 }
 
-const Arise = ({ children, delay = 0.5 }: AriseType) => {
+const Arise = ({ children, delay = 0.5, duration = 0.7 }: AriseType) => {
   const childrenList = Array.isArray(children) ? children : new Array(children)
 
   const ariseChildren = () => {
@@ -20,7 +21,7 @@ const Arise = ({ children, delay = 0.5 }: AriseType) => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.7,
+            duration: duration,
             scale: { type: 'spring', bounce: 0.5, delay: index * delay },
           }}
           // onAnimationStart={}
