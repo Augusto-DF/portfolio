@@ -23,24 +23,6 @@
   .tabWrapper {
     justify-self: center;
     gap: 2.4rem;
-
-    li {
-      padding: 0.6rem 1.8rem;
-      font-family: $font-family-secondary;
-      font-size: $font-size-xs;
-      font-weight: $font-weight-semibold;
-      color: $font-inverse-high;
-      border: 0.1rem solid transparent;
-      cursor: pointer;
-
-      &:hover {
-        @include hoverState;
-      }
-
-      &.active {
-        @include hoverState;
-      }
-    }
   }
 
   .socialWrapper {
