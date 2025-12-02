@@ -1,0 +1,71 @@
+// Fenrir palette
+$fenrir-brand-dark: #1c1c20;
+$fenrir-brand-nut: #f0a471;
+$fenrir-brand-sky: #5ec2eb;
+$fenrir-brand-cotton: #eef7ff;
+$fenrir-brand-mystic: #a25efa;
+
+// Basic colors
+$white: #ffffff;
+$black: #000000;
+
+// Font palette
+$font-high: #1a1b1e;
+$font-medium: #3e3f4a;
+$font-inverse-high: $white;
+$font-inverse-medium: #cbd3d3;
+
+// BG palette
+$bg-dark: $fenrir-brand-dark;
+$bg-white: $white;
+$bg-blue: #b8ebff;
+
+// Surface palette
+$surface-dark: #282930;
+$surface-medium-gray: #4b4d5a;
+$surface-light-gray: #f4f5fa;
+$surface-white: $white;
+
+// Stroke palette
+$stroke-white: $white;
+$stroke-black: $black;
+
+// Cards Bg
+$default-card-bg: #e3e5ee;
+
+:export {
+  // Fenrir palette
+  fenrirBrandDark: $fenrir-brand-dark;
+  fenrirBrandNut: $fenrir-brand-nut;
+  /* $fenrir-brand-sky: #5ec2eb;
+  $fenrir-brand-cotton: #eef7ff;
+  $fenrir-brand-mystic: #a25efa; */
+
+  // Basic colors
+  white: $white;
+  black: $black;
+
+  // Font palette
+  /* $font-high: #1a1b1e;
+  $font-medium: #3e3f4a;
+  $font-inverse-high: $white;
+  $font-inverse-medium: #cbd3d3; */
+
+  // BG palette
+  /* $bg-dark: $fenrir-brand-dark;
+  $bg-white: $white;
+  $bg-blue: #b8ebff; */
+
+  // Surface palette
+  surfaceDark: $surface-dark;
+  /* $surface-medium-gray: #4b4d5a;
+  $surface-light-gray: #f4f5fa;
+  $surface-white: $white;
+ */
+  // Stroke palette
+  /* $stroke-white: $white;
+  $stroke-black: $black; */
+
+  // Cards Bg
+  /* $default-card-bg: #e3e5ee; */
+}

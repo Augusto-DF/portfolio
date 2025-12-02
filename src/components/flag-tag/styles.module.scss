@@ -1,12 +1,12 @@
 @import '@styles/typography.scss';
-@import '@styles/colors.scss';
+@import '@styles/colors.module.scss';
 
 .flagTagContainer {
-    display: flex;
-    align-items: center;
-    gap: 1.1rem;
-    color: $font-high;
-    font-family: $font-family-secondary;
-    font-size: $font-size-xs;
-    font-weight: $font-weight-semibold;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  color: $font-high;
+  font-family: $font-family-secondary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
 }

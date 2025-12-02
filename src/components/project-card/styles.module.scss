@@ -1,60 +1,60 @@
 @import '@styles/typography.scss';
-@import '@styles/colors.scss';
+@import '@styles/colors.module.scss';
 @import '@styles/line-clamp.scss';
 @import '@styles/media-queries.scss';
 
 .cardContainer {
-    max-width: 50.4rem;
-    height: 100%;
-    padding: 2.4rem;
+  max-width: 50.4rem;
+  height: 100%;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  background-color: $fenrir-brand-cotton;
+  border: 0.1rem solid $stroke-black;
+  border-radius: 1.2rem;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 3px 3px 0px 0px $black;
+    transform: translate(-0.3rem, -0.3rem);
+  }
+
+  .imageContainer {
+    height: 22rem;
+    min-height: 22rem;
+    background-color: #dee7ff;
     display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    background-color: $fenrir-brand-cotton;
-    border: 0.1rem solid $stroke-black;
-    border-radius: 1.2rem;
-    transition: .2s;
+    align-items: center;
 
-    &:hover {
-        box-shadow: 3px 3px 0px 0px $black;
-        transform: translate(-0.3rem, -0.3rem);
+    img {
+      width: 100%;
     }
+  }
 
-    .imageContainer {
-        height: 22rem;
-        min-height: 22rem;
-        background-color: #dee7ff;
-        display: flex;
-        align-items: center;
+  h2 {
+    min-height: 4rem;
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    @include line-clamp(2);
+  }
 
-        img {
-            width: 100%;
-        }
-    }
-
-    h2 {
-        min-height: 4rem;
-        font-size: $font-size-md;
-        font-weight: $font-weight-bold;
-        @include line-clamp(2)
-    }
-
-    .tagsContainer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-    }
+  .tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
 }
 
 @include sm-viewport {
-    .cardContainer {
-        .imageContainer {
-            align-items: initial;
-            justify-content: center;
+  .cardContainer {
+    .imageContainer {
+      align-items: initial;
+      justify-content: center;
 
-            img {
-                width: initial;
-            }
-        }
+      img {
+        width: initial;
+      }
     }
+  }
 }

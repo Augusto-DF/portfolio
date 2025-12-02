@@ -1,105 +1,105 @@
-@import '@styles/colors.scss';
+@import '@styles/colors.module.scss';
 @import '@styles/typography.scss';
 @import '@styles/line-clamp.scss';
 @import '@styles/media-queries.scss';
 
 .card {
-     border: 0.2rem solid $stroke-black;
-     border-radius: 1.6rem;
-     overflow: hidden;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     transition: .2s;
+  border: 0.2rem solid $stroke-black;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: 0.2s;
 
-     &:hover {
-        box-shadow: 3px 3px 0px 0px $black;
-        transform: translate(-0.3rem, -0.3rem);
-    }
+  &:hover {
+    box-shadow: 3px 3px 0px 0px $black;
+    transform: translate(-0.3rem, -0.3rem);
+  }
 }
 
 .inverse {
-    .imageWrapper {
-        grid-area: 1 / 2;
-    }
+  .imageWrapper {
+    grid-area: 1 / 2;
+  }
 
-    .contentWrapper {
-        grid-area: 1 / 1;
-    }
+  .contentWrapper {
+    grid-area: 1 / 1;
+  }
 }
 
 .imageWrapper {
-    background-color: $default-card-bg;
-    padding: 1.6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    img {
-        max-width: 100%;
-        max-height: 100%;
-    }
+  background-color: $default-card-bg;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .contentWrapper {
-    padding: 4.8rem;
-    color: $font-high;
+  padding: 4.8rem;
+  color: $font-high;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  background-color: $white;
+
+  h3 {
+    font-family: $font-family-secondary;
+  }
+
+  .flagWrapper {
     display: flex;
-    flex-direction: column;
-    gap: 4.8rem;
-    background-color: $white;
+    justify-content: space-between;
+    align-items: center;
 
     h3 {
-        font-family: $font-family-secondary;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .workWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    h2 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
     }
 
-    .flagWrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        h3 {
-            font-size: $font-size-xs;
-            font-weight: $font-weight-medium;
-        }
+    h3 {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-regular;
+      @include line-clamp(2);
     }
+  }
 
-    .workWrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
-
-        h2 {
-            font-size: $font-size-xl;
-            font-weight: $font-weight-bold;
-        }
-
-        h3 {
-            font-size: $font-size-sm;
-            font-weight: $font-weight-regular;
-             @include line-clamp(2)
-        }
-    }
-
-    .tagsWrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-    }
+  .tagsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
 }
 
 @include sm-viewport {
-    .card {
-        grid-template-columns: 1fr;
-        grid-template-rows: 37rem auto;
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 37rem auto;
+  }
+
+  .inverse {
+    .imageWrapper {
+      grid-area: 1 / 1;
     }
 
-    .inverse {
-        .imageWrapper {
-            grid-area: 1 / 1;
-        }
-    
-        .contentWrapper {
-            grid-area: 2 / 1;
-        }
+    .contentWrapper {
+      grid-area: 2 / 1;
     }
+  }
 }

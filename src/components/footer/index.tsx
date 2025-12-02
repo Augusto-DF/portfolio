@@ -1,7 +1,9 @@
-import Button, { IconButton } from '@components/button'
+import { IconButton } from '@components/button'
 
 import { FOOTER_BUTTON_LIST } from './constants'
 import styles from './styles.module.scss'
+import AnimatedButton from '@components/animated/animated-button'
+import Arise from '@components/animated/arise'
 
 const Footer = () => {
   const handleClick = (name: string) => {
@@ -30,20 +32,22 @@ const Footer = () => {
           <h3>neoaugustocode@gmail.com</h3>
         </div>
         <div className={styles.buttonContainer}>
-          {FOOTER_BUTTON_LIST.map((buttonData, id) => {
-            const { value, theme, Icon, iconPosition, label, hoverColor } = buttonData
-            const button = { theme, Icon, iconPosition, label, hoverColor } as IconButton
+          <Arise>
+            {FOOTER_BUTTON_LIST.map((buttonData, id) => {
+              const { value, theme, Icon, iconPosition, label, hoverColor } = buttonData
+              const button = { theme, Icon, iconPosition, label, hoverColor } as IconButton
 
-            return (
-              <Button
-                key={`footer-${value}-${id}`}
-                {...button}
-                onClick={() => {
-                  handleClick(value)
-                }}
-              />
-            )
-          })}
+              return (
+                <AnimatedButton
+                  key={`footer-${value}-${id}`}
+                  {...button}
+                  onClick={() => {
+                    handleClick(value)
+                  }}
+                />
+              )
+            })}
+          </Arise>
         </div>
       </div>
     </footer>
