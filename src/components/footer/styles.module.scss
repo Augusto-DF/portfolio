@@ -65,8 +65,10 @@ footer {
       flex-wrap: wrap;
       justify-content: stretch;
 
-      button {
+      button,
+      div {
         flex: 1;
+        display: flex;
       }
     }
   }
