@@ -1,5 +1,6 @@
 @import '@styles/typography.scss';
 @import '@styles/colors.module.scss';
+@import '@styles/media-queries.scss';
 
 .buttonWrapper {
   padding: 0.8rem 3.2rem;
@@ -53,4 +54,13 @@
   border-color: $surface-dark;
   box-shadow: 3px, 3px 0 0 $surface-dark;
   transform: translate(-3px, -3px);
+}
+
+@include sm-viewport {
+  .active-dark {
+    transform: translate(3px, 0);
+  }
+  .active-light {
+    transform: translate(3px, 0);
+  }
 }
