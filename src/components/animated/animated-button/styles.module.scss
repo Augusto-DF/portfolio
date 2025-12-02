@@ -43,3 +43,14 @@
   background-color: $white;
   color: $font-high;
 }
+
+.active-dark {
+  border-color: $white;
+  box-shadow: 3px 3px 0px 0px $white;
+  transform: translate(-3px, -3px);
+}
+.active-light {
+  border-color: $surface-dark;
+  box-shadow: 3px, 3px 0 0 $surface-dark;
+  transform: translate(-3px, -3px);
+}

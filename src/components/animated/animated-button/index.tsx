@@ -10,6 +10,7 @@ type CommonProps = {
   className?: string
   type?: 'button' | 'submit'
   hoverColor?: string
+  isActive?: boolean
 }
 
 export type PrimaryButton = CommonProps & {
@@ -34,6 +35,7 @@ const AnimatedButton = ({
   hoverColor,
   className,
   type = 'button',
+  isActive = false,
   ...props
 }: ButtonType) => {
   const { theme = 'primary', label } = props
@@ -60,14 +62,24 @@ const AnimatedButton = ({
     if (onClick) onClick()
   }
 
+  const buttonCommonProps = {
+    onClick: handleClick,
+    type: type,
+  }
+
+  const hoverState = {
+    x: shadowThickness.right * -1,
+    y: shadowThickness.down * -1,
+    ...hoverProps[styleTheme],
+    transition: { duration: 0.1 },
+  }
+
   if (theme === 'icon' && 'Icon' in props) {
     const { iconPosition = label ? 'left' : 'solo', Icon } = props
 
     return (
       <motion.button
-        onClick={handleClick}
-        type={type}
-        transition={{ duration: 0.1 }}
+        {...buttonCommonProps}
         className={classnames(
           styles.iconButton,
           styles[iconPosition],
@@ -75,32 +87,37 @@ const AnimatedButton = ({
           className,
           styles[styleTheme]
         )}
-        whileHover={{
-          x: shadowThickness.right * -1,
-          y: shadowThickness.down * -1,
-          ...hoverProps[styleTheme],
-        }}
+        whileHover={hoverState}
       >
         <Icon />
         {iconPosition !== 'solo' && label}
       </motion.button>
     )
   } else {
-    return (
-      <motion.button
-        onClick={handleClick}
-        type={type}
-        whileHover={{
-          x: shadowThickness.right * -1,
-          y: shadowThickness.down * -1,
-          ...hoverProps[styleTheme],
-        }}
-        transition={{ duration: 0.1 }}
-        className={classnames(styles.buttonWrapper, className, styles[styleTheme])}
-      >
-        {label}
-      </motion.button>
-    )
+    if (isActive) {
+      return (
+        <button
+          {...buttonCommonProps}
+          className={classnames(
+            styles.buttonWrapper,
+            className,
+            styles[styleTheme],
+            styles['active-' + styleTheme]
+          )}
+        >
+          {label}
+        </button>
+      )
+    } else
+      return (
+        <motion.button
+          {...buttonCommonProps}
+          whileHover={hoverState}
+          className={classnames(styles.buttonWrapper, className, styles[styleTheme])}
+        >
+          {label}
+        </motion.button>
+      )
   }
 }
 
