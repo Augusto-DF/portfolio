@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useId } from 'react'
 import * as motion from 'motion/react-client'
 import { ChildrenType } from '@components/utils'
 
@@ -10,6 +10,7 @@ type AriseType = {
 
 const Arise = ({ children, delay = 0.5, duration = 0.7 }: AriseType) => {
   const childrenList = Array.isArray(children) ? children : new Array(children)
+  const rdmId = useId()
 
   const ariseChildren = () => {
     return childrenList.map((child, index) => {
@@ -17,6 +18,7 @@ const Arise = ({ children, delay = 0.5, duration = 0.7 }: AriseType) => {
 
       return (
         <motion.div
+          key={`arise-child-${rdmId}-${index}`}
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
