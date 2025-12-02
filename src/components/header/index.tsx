@@ -1,8 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import styles from './styles.module.scss'
 
-import Button from '@components/button'
-
 import { ReactComponent as Logo } from '@assets/logo/augusto-portfolio-logo.svg'
 import { ReactComponent as GithubIcon } from '@assets/icons/github-icon.svg'
 import { ReactComponent as LinkedinIcon } from '@assets/icons/linkedin-icon.svg'
@@ -12,7 +10,7 @@ import { HOVER_COLORS } from 'src/libs/utils/hoverColors'
 import useWindowSize from '@hooks/use-window-size'
 import { useMemo, useState } from 'react'
 import Arise from '@components/animated/arise'
-//import Arise from '@components/animated/arise'
+import AnimatedButton from '@components/animated/animated-button'
 
 const Header = () => {
   const { pathname } = useLocation()
@@ -32,7 +30,6 @@ const Header = () => {
 
   const onSelectALink = (onClick?: () => void) => {
     if (isMobile) toggleMenu()
-
     onClick && onClick()
   }
 
@@ -68,20 +65,29 @@ const Header = () => {
           <div className={classnames(styles.bar, styles.bar3)}></div>
         </button>
       )}
+      {/* <nav> */}
       <ul className={classnames(styles.tabWrapper, mobileMenuStyle)}>
         {HEADER_DATA.map(({ label, href, onClick }, id) => (
           <Link to={href} key={href + id}>
-            <button onClick={() => onSelectALink(onClick)}>
-              <li className={classnames({ [styles.active]: href === pathname })}>{label}</li>
-            </button>
+            <li>
+              <AnimatedButton
+                label={label}
+                styleTheme="dark"
+                onClick={() => {
+                  onSelectALink(onClick)
+                }}
+                isActive={href === pathname}
+              />
+            </li>
           </Link>
         ))}
       </ul>
+      {/* </nav> */}
 
       <ul className={classnames(styles.socialWrapper, mobileMenuStyle)}>
-        <Arise delay={0.1}>
+        <Arise delay={0.2}>
           <li>
-            <Button
+            <AnimatedButton
               hoverColor={HOVER_COLORS.ferir_nut}
               theme="icon"
               Icon={GithubIcon}
@@ -92,7 +98,7 @@ const Header = () => {
             />
           </li>
           <li>
-            <Button
+            <AnimatedButton
               hoverColor={HOVER_COLORS.ferir_nut}
               theme="icon"
               Icon={LinkedinIcon}
